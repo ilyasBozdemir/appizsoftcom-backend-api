@@ -2,11 +2,13 @@
 
 namespace Appizsoft.Api.Controllers
 {
-    public class UsersController : Controller
+    public class UsersController : ControllerBase
     {
+        [HttpGet]
+        [Route("api/[controller]")]
         public IActionResult Index()
         {
-            return View();
+            return Ok();
         }
     }
 }
