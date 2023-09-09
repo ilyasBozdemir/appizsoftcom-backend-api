@@ -1,0 +1,15 @@
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Application\obj\Debug\net7.0\AppizsoftApp.Application.csproj.AssemblyReference.cache
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Application\obj\Debug\net7.0\AppizsoftApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Application\obj\Debug\net7.0\AppizsoftApp.Application.AssemblyInfoInputs.cache
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Application\obj\Debug\net7.0\AppizsoftApp.Application.AssemblyInfo.cs
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Application\obj\Debug\net7.0\AppizsoftApp.Application.csproj.CoreCompileInputs.cache
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Application\bin\Debug\net7.0\AppizsoftApp.Application.deps.json
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Application\bin\Debug\net7.0\AppizsoftApp.Application.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Application\bin\Debug\net7.0\AppizsoftApp.Application.pdb
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Application\bin\Debug\net7.0\AppizsoftApp.Domain.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Application\bin\Debug\net7.0\AppizsoftApp.Domain.pdb
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Application\obj\Debug\net7.0\AppizsoftApp.Application.csproj.CopyComplete
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Application\obj\Debug\net7.0\AppizsoftApp.Application.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Application\obj\Debug\net7.0\refint\AppizsoftApp.Application.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Application\obj\Debug\net7.0\AppizsoftApp.Application.pdb
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Application\obj\Debug\net7.0\ref\AppizsoftApp.Application.dll

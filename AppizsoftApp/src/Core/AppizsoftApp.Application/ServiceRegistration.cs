@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
+using MediatR;
 
 namespace AppizsoftApp.Application
 {
-    public class ServiceRegistration
+    public static class ServiceRegistration
     {
+        public static void AddApplicationRegistration(this IServiceCollection services)
+        {
+            var assm = Assembly.GetExecutingAssembly();
+           
+            //services.AddMediatR(assm);
+        }
     }
 }

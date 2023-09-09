@@ -1,0 +1,17 @@
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\obj\Debug\net7.0\AppizsoftApp.Infrastructure.csproj.AssemblyReference.cache
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\obj\Debug\net7.0\AppizsoftApp.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\obj\Debug\net7.0\AppizsoftApp.Infrastructure.AssemblyInfoInputs.cache
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\obj\Debug\net7.0\AppizsoftApp.Infrastructure.AssemblyInfo.cs
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\obj\Debug\net7.0\AppizsoftApp.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\bin\Debug\net7.0\AppizsoftApp.Infrastructure.deps.json
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\bin\Debug\net7.0\AppizsoftApp.Infrastructure.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\bin\Debug\net7.0\AppizsoftApp.Infrastructure.pdb
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\bin\Debug\net7.0\AppizsoftApp.Application.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\bin\Debug\net7.0\AppizsoftApp.Domain.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\bin\Debug\net7.0\AppizsoftApp.Application.pdb
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\bin\Debug\net7.0\AppizsoftApp.Domain.pdb
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\obj\Debug\net7.0\AppizsoftApp.Infrastructure.csproj.CopyComplete
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\obj\Debug\net7.0\AppizsoftApp.Infrastructure.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\obj\Debug\net7.0\refint\AppizsoftApp.Infrastructure.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\obj\Debug\net7.0\AppizsoftApp.Infrastructure.pdb
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\obj\Debug\net7.0\ref\AppizsoftApp.Infrastructure.dll
