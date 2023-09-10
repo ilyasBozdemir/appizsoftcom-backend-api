@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace AppizsoftApp.WebApi.Controllers.v2
 {
     [ApiController]
     [ApiVersion("2")]
-    [Route("api/v2/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class UsersController : ControllerBase
     {
 
