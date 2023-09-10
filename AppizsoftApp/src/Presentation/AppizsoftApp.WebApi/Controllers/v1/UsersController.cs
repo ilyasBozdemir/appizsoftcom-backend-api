@@ -1,4 +1,5 @@
 ﻿
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace AppizsoftApp.WebApi.Controllers
@@ -8,12 +9,12 @@ namespace AppizsoftApp.WebApi.Controllers
     [Route("api/v{version:apiVersion}/[controller]")]
     public class UsersController : ControllerBase
     {
-
+       
+        
         [HttpGet("get-user")]
         public string GetUserV1()
         {
-
-            return "v1";
+            return "sdgdsg2";
         }
     }
 }

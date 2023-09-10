@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AppizsoftApp.Application.Features.Users.Commands
 {
-    internal class CreateUserCommand
+    public class CreateUserCommand
     {
+
     }
 }

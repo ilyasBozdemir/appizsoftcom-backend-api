@@ -74,4 +74,3 @@ namespace AppizsoftApp.Persistence.Repositories.Entity_Framework
 }
 
 
-
