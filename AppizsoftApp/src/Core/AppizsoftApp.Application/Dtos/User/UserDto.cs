@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppizsoftApp.Application.Dtos
+namespace AppizsoftApp.Application.Dtos.User
 {
     public class UserDto
     {
@@ -17,5 +17,4 @@ namespace AppizsoftApp.Application.Dtos
         public DateTime? LastLogin { get; set; }
         public List<string> Roles { get; set; }
     }
-
 }

@@ -10,3 +10,8 @@ D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Persistence\obj\Debug\net7.0\refint\AppizsoftApp.Persistence.dll
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Persistence\obj\Debug\net7.0\AppizsoftApp.Persistence.pdb
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Persistence\obj\Debug\net7.0\ref\AppizsoftApp.Persistence.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Persistence\bin\Debug\net7.0\AppizsoftApp.Application.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Persistence\bin\Debug\net7.0\AppizsoftApp.Domain.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Persistence\bin\Debug\net7.0\AppizsoftApp.Application.pdb
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Persistence\bin\Debug\net7.0\AppizsoftApp.Domain.pdb
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Persistence\obj\Debug\net7.0\AppizsoftApp.Persistence.csproj.CopyComplete

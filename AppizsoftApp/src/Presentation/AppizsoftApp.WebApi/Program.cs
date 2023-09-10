@@ -25,15 +25,6 @@ builder.Services.AddSwaggerGen(c =>
             .OfType<ApiVersionAttribute>()
             .SelectMany(attr => attr.Versions);
 
-        Console.WriteLine("a: "+docName);
-        Console.WriteLine("a: " + apiDesc);
-
-        var list=versions.ToList();
-        for (int i = 0; i < list.Count; i++)
-        {
-            Console.WriteLine("l: " + list[i]);
-        }
-
 
         return versions.Any(v => $"v{v}" == docName);
     });
@@ -59,8 +50,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "AppizsoftApp.WebApi V1");
-        c.SwaggerEndpoint("/swagger/v2/swagger.json", "AppizsoftApp.WebApi  V2");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Appizsoft Software API V1");
+        c.SwaggerEndpoint("/swagger/v2/swagger.json", "Appizsoft Software API V2");
     });
 }
 
