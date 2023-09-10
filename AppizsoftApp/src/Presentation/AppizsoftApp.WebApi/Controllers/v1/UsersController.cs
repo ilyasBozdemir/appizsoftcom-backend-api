@@ -1,20 +1,26 @@
-﻿
-
+﻿using AppizsoftApp.Application.Dtos.User;
+using AppizsoftApp.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AppizsoftApp.WebApi.Controllers
 {
     [ApiController]
     [ApiVersion("1")]
-    [Route("api/v{version:apiVersion}/[controller]")]
+    [Route("api/v{version:apiVersion}/users")]
     public class UsersController : ControllerBase
     {
-       
-        
-        [HttpGet("get-user")]
-        public string GetUserV1()
+        [HttpPost]
+        [Route("add")]
+        public ActionResult UserAddV1(string firstName, string lastName)
         {
-            return "sdgdsg2";
+
+            return StatusCode(201);
+        }
+        [HttpGet]
+        [Route("all")]
+        public string GetAllUsersV1()
+        {
+            return "kullanıcı listesi[]";
         }
     }
 }

@@ -12,31 +12,45 @@ namespace AppizsoftApp.Domain.Entities
         /// <summary>
         /// Kullanıcının kullanıcı kimliği.
         /// </summary>
+
+        [Column("user_id")]
         public int UserId { get; set; }
         /// <summary>
         /// Kullanıcının rol kimliği.
         /// </summary>
+        /// 
+        [Column("role_id")]
         public int RoleId { get; set; }
 
         /// <summary>
         /// Kullanıcının kullanıcı adı.
         /// </summary>
+        [Column("username")]
         public string Username { get; set; }
 
         /// <summary>
         /// Kullanıcının e-posta adresi.
         /// </summary>
+        [Column("email")]
         public string Email { get; set; }
 
         /// <summary>
         /// Kullanıcının şifre hash'i.
         /// </summary>
+        [Column("password_hash")]
         public string PasswordHash { get; set; }
 
         /// <summary>
-        /// Kullanıcının tam adı.
+        /// Kullanıcının adı
         /// </summary>
-        public string FullName { get; set; }
+        [Column("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Kullanıcının soyadı
+        /// </summary>
+        [Column("last_name")]
+        public string LastName { get; set; }
 
         /// <summary>
         /// Kullanıcının hesap oluşturma tarihi.
