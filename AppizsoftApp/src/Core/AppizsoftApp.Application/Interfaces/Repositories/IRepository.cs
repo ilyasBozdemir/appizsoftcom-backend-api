@@ -11,7 +11,7 @@ namespace AppizsoftApp.Application.Interfaces.Repositories
     /// Genel bir IRepository arabirimi, CRUD işlemlerini (Oluştur, Oku, Güncelle, Sil) tanımlar.
     /// </summary>
     /// <typeparam name="TEntity">Varlık türünü temsil eden tür.</typeparam>
-    public interface IRepository<TEntity> where TEntity : BaseEntity
+    public interface IRepository<TEntity>: IDisposable where TEntity : BaseEntity
     {
         /// <summary>
         /// Tüm varlıkları asenkron olarak alır.
@@ -31,14 +31,14 @@ namespace AppizsoftApp.Application.Interfaces.Repositories
         /// </summary>
         /// <param name="id">Aranan varlığın benzersiz kimliği.</param>
         /// <returns>Belirtilen varlık.</returns>
-        Task<TEntity> GetByIdAsync(int id);
+        Task<TEntity> GetByIdAsync(Guid id);
 
         /// <summary>
         /// Belirli bir varlığı ID'ye göre asenkron olarak alır.
         /// </summary>
         /// <param name="id">Aranan varlığın benzersiz kimliği.</param>
         /// <returns>Belirtilen varlık.</returns>
-        Task<TEntity> GetById(int id);
+        Task<TEntity> GetById(Guid id);
 
 
         /// <summary>

@@ -7,20 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Aspects\Autofac\Caching\" />
-    <Folder Include="Aspects\Autofac\Exception\" />
-    <Folder Include="Aspects\Autofac\Logging\" />
-    <Folder Include="Aspects\Autofac\Validation\" />
-    <Folder Include="Aspects\Autofac\Transaction\" />
-    <Folder Include="Aspects\Autofac\Performance\" />
-    <Folder Include="CrossCuttingConcerns\Caching\" />
-    <Folder Include="CrossCuttingConcerns\Logging\" />
+    <Folder Include="Features\Auths\Commands\" />
     <Folder Include="Mapping\" />
-    <Folder Include="Enums\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Storage\" />
-    <Folder Include="Wrappers\" />
-    <Folder Include="Parameter\" />
+    <Folder Include="Swagger\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,7 +17,12 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="MediatR" Version="12.1.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+    <PackageReference Include="System.Text.Json" Version="7.0.3" />
   </ItemGroup>
 
   <ItemGroup>

@@ -2,10 +2,11 @@
 
 namespace AppizsoftApp.WebApi.Controllers.v2
 {
+    /*
     [ApiController]
     [ApiVersion("2")]
     [Route("api/v{version:apiVersion}/[controller]")]
-    public class UsersController : ControllerBase
+    public class UsersController : ApiControllerBase
     {
 
         [HttpGet("get-user")]
@@ -14,4 +15,5 @@ namespace AppizsoftApp.WebApi.Controllers.v2
             return "v2";
         }
     }
+    */
 }

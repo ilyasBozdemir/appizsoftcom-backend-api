@@ -40,6 +40,11 @@ namespace AppizsoftApp.Persistence.Repositories.Entity_Framework
             throw new NotImplementedException();
         }
 
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<IEnumerable<TEntity>> GetAll()
         {
             throw new NotImplementedException();
@@ -55,7 +60,17 @@ namespace AppizsoftApp.Persistence.Repositories.Entity_Framework
             throw new NotImplementedException();
         }
 
+        public Task<TEntity> GetById(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<TEntity> GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TEntity> GetByIdAsync(Guid id)
         {
             throw new NotImplementedException();
         }

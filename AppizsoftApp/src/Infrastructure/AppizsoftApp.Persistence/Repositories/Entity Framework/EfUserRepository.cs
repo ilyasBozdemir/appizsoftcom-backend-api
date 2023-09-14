@@ -66,15 +66,7 @@ namespace AppizsoftApp.Persistence.Repositories.Entity_Framework
             throw new NotImplementedException();
         }
 
-        Task<User> IRepository<User>.GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<User> IRepository<User>.GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 
 }

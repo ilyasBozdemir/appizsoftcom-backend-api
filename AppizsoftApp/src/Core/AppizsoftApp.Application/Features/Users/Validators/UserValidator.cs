@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppizsoftApp.Application.Dtos.User
+namespace AppizsoftApp.Application.Features.Users.Validators
 {
-    public class CreateUserDto
+    internal class UserValidator
     {
     }
 }

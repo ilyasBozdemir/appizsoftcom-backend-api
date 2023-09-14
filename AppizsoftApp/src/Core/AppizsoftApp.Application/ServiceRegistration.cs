@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
+﻿using AppizsoftApp.Application.Features.Users.Queries;
 using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AppizsoftApp.Application
 {
@@ -8,9 +8,11 @@ namespace AppizsoftApp.Application
     {
         public static void AddApplicationRegistration(this IServiceCollection services)
         {
-            var assm = Assembly.GetExecutingAssembly();
+            // `AddScoped`, her HTTP isteği için yeni bir hizmet örneği oluşturur ve bu isteğin ömrü boyunca aynı örneği kullanır.
+            //senden IRequestHandler<ExistUserQuery, bool> istersem bana ExistUserQueryHandler ver
+            services.AddScoped<IRequestHandler<ExistUserQuery, bool>, ExistUserQueryHandler>();
+        
            
-            //services.AddMediatR(assm);
         }
     }
 }

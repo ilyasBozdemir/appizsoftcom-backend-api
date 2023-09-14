@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace AppizsoftApp.Application.Interfaces.Repositories.Dapper
 {
-    public interface IUserRepositoryDapper // örnek olark olusturulmuştur.
+    public interface IUserRepositoryDapper : IUserRepository
     {
         User GetUserByEmail(string email);
         // Diğer kullanıcı yönetimi işlevleri
     }
-
 }

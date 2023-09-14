@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace AppizsoftApp.Persistence
+namespace AppizsoftApp.Infrastructure
 {
-    public class ServiceRegistration
+    public static class ServiceRegistration
     {
+        public static void AddInfrastructureRegistration(this IServiceCollection services)
+        {
+
+        }
     }
 }
