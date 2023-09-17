@@ -15,13 +15,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 
+
 #region MediatR servise eklenmesi
 //builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
-
-
-
 #endregion
+
 
 #region Swagger servise eklenmesi
 builder.Services.AddSwaggerGen(c =>
@@ -113,10 +112,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 
 #endregion
 
+
 #region Katmanlarýn servis kayýtlarý
+
 builder.Services.AddApplicationRegistration();
 builder.Services.AddPersistenceRegistration();
 builder.Services.AddInfrastructureRegistration();
+
 #endregion
 
 #region ApiVersioning servise eklenmesi 

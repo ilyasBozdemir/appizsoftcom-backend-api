@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppizsoftApp.Application.Exceptions.UserExceptions
+namespace AppizsoftApp.Application.Exceptions.AuthExceptions
 {
     public class UserAlreadyExistsException : Exception
     {

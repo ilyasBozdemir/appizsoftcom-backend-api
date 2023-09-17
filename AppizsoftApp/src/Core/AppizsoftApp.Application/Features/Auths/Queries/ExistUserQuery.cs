@@ -1,51 +1,47 @@
-﻿using AppizsoftApp.Application.Interfaces.Repositories;
+﻿using AppizsoftApp.Application.Exceptions.AuthExceptions;
+using AppizsoftApp.Application.Features.Auths.Results;
+using AppizsoftApp.Application.Interfaces.Repositories;
+using AppizsoftApp.Application.Wrappers;
+using AppizsoftApp.Domain.Entities;
 using MediatR;
+using System.Net;
+
 namespace AppizsoftApp.Application.Features.Users.Queries
 {
-    /* ExistUserQuery ilgili controller ile cagrılır query oldugu belli olsun diye Query ile biter.
-     * IRequest<bool>  arabirimini uygular bool yani kullanıcı var yok anlamında true veya false dönmesi için.
-     * mediatr nesnesine _mediator.Send(query); diye gönderdik ya.
-     * IRequest'ten türediği için  IRequestHandler içinde ilgili query sınıfını arar.
-     * IRequestHandler<ExistUserQuery, bool> olarak işlendiği için
-       ExistUserQueryHandler sınıfında ki Handle methodunu cagırır. Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken);
-      ile gönderilen request'i burda alır ve işler
-
-
-     * Diğer konu da aşagıda ki gibidir. 
-    IUserRepositoryEF ve IUserRepositoryDapper zaten IUserRepository'dan miras alıyor.
-    Dependency Injection (DI) ile;
-    // Entity Framework kullanmak için IUserRepository'yi kaydetme
-       
-    services.AddScoped<IUserRepository, UserRepositoryEF>();
-    // UserRepositoryEF, IUserRepositoryEF arayüzünü uygulayan bir sınıf olmalı
-    //servise diyorsun her HTTP isteği için yeni bir hizmet örneği oluştur
-    ve bu isteğin ömrü boyunca aynı örneği kullan diye o yüzden AddScoped ile ekliyoruz
-    tabi bunu ilgili katmanın ServiceRegistration.cs içinde yapcaz
-    yani servise diyorsun senden IUserRepository istersem bana UserRepositoryEF
-    bundan bir nesne ver.
-
-    // Dapper kullanmak için IUserRepository'yi kaydetme
-    services.AddScoped<IUserRepository, UserRepositoryDapper>(); 
-    // UserRepositoryDapper, IUserRepositoryDapper arayüzünü uygulayan bir sınıf olmalı */
-    public class ExistUserQuery : IRequest<bool>
+    public class ExistUserQuery : IRequest<ExistUserResult>
     {
-        public Guid UserId { get; set; }
+        public string UserName { get; set; }
     }
-    public class ExistUserQueryHandler : IRequestHandler<ExistUserQuery, bool>
+    public class ExistUserQueryHandler : IRequestHandler<ExistUserQuery, ExistUserResult>
     {
-        private readonly IUserRepository _userRepository;
-
-        /*
-        public ExistUserQueryHandler(IUserRepository userRepository)
+        
+        private readonly IAuthRepository _authRepository;
+        public ExistUserQueryHandler(IAuthRepository authRepository)
         {
-            _userRepository = userRepository;
-
+            _authRepository = authRepository;
         }
-        */
-        public async Task<bool> Handle(ExistUserQuery request, CancellationToken cancellationToken)
+        
+
+        public async Task<ExistUserResult> Handle(ExistUserQuery request, CancellationToken cancellationToken)
         {
-          //  var user = await _userRepository.GetByIdAsync(request.UserId);
-            return true;
+            
+            var result = await _authRepository.UserExists(request.UserName);
+
+            if (result)
+            {
+                return new ExistUserResult
+                {
+                    UserExists = result
+                };
+            }
+            else
+            {
+                return new ExistUserResult
+                {
+                    UserExists = false
+                };
+            }
+            
         }
     }
 }

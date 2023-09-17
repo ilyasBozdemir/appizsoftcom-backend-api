@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AppizsoftApp.Application.Enums;
 
 namespace AppizsoftApp.Application.Dtos.Auth
 {
@@ -11,7 +7,7 @@ namespace AppizsoftApp.Application.Dtos.Auth
         public Guid Id { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
-
+        public string Password { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string FullName
@@ -21,9 +17,6 @@ namespace AppizsoftApp.Application.Dtos.Auth
                 return $"{Name} {LastName}";
             }
         }
-        public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
-        public DateTime? LastLogin { get; set; }
-        public List<string> Roles { get; set; }
+        public List<Roles> Roles { get; set; }
     }
 }

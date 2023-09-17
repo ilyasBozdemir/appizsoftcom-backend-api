@@ -1,4 +1,4 @@
-﻿namespace AppizsoftApp.Application.Exceptions.UserExceptions
+﻿namespace AppizsoftApp.Application.Exceptions.AuthExceptions
 {
     public class DuplicateEmailException : Exception
     {

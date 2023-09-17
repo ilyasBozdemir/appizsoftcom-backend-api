@@ -70,3 +70,8 @@ D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Presentation\AppizsoftApp.We
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Presentation\AppizsoftApp.WebApi\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Presentation\AppizsoftApp.WebApi\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Presentation\AppizsoftApp.WebApi\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Presentation\AppizsoftApp.WebApi\bin\Debug\net7.0\Microsoft.Azure.Amqp.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Presentation\AppizsoftApp.WebApi\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Presentation\AppizsoftApp.WebApi\bin\Debug\net7.0\FluentValidation.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Presentation\AppizsoftApp.WebApi\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Presentation\AppizsoftApp.WebApi\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll

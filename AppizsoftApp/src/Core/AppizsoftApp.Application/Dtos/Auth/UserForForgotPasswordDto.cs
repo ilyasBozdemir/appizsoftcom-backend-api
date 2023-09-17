@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppizsoftApp.Persistence.Context
+namespace AppizsoftApp.Application.Dtos.Auth
 {
-    public class AppizsoftAppDevDB
+    public class UserForForgotPasswordDto
     {
+        public string mailAddreess { get; set; }
     }
 }

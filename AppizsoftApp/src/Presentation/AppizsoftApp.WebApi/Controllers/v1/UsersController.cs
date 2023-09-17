@@ -1,5 +1,4 @@
 ﻿using AppizsoftApp.Application.Dtos.User;
-using AppizsoftApp.Application.Exceptions.UserExceptions;
 using AppizsoftApp.Application.Features.Users.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

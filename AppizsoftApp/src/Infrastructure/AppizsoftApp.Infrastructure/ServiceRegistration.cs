@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using AppizsoftApp.Application.Interfaces;
+using AppizsoftApp.Infrastructure.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AppizsoftApp.Infrastructure
 {
@@ -6,7 +8,7 @@ namespace AppizsoftApp.Infrastructure
     {
         public static void AddInfrastructureRegistration(this IServiceCollection services)
         {
-
+            services.AddScoped<ITokenService, TokenService>();
         }
     }
 }

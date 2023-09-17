@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AppizsoftApp.WebApi.Controllers.v1
@@ -9,9 +10,11 @@ namespace AppizsoftApp.WebApi.Controllers.v1
     public class ApiControllerBase : ControllerBase
     {
         private readonly IMediator _mediator;
-        public ApiControllerBase(IMediator mediator)
+        private readonly IMapper _mapper;
+        public ApiControllerBase(IMediator mediator, IMapper mapper)
         {
-            _mediator = mediator ;
+            _mediator = mediator;
+            _mapper = mapper;
         }
         protected async Task<TResult> QueryAsync<TResult>(IRequest<TResult> query)
         {

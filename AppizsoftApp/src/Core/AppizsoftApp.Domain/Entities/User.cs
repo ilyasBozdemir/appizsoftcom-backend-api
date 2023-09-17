@@ -38,7 +38,13 @@ namespace AppizsoftApp.Domain.Entities
         /// Kullanıcının şifre hash'i.
         /// </summary>
         [Column("password_hash")]
-        public string PasswordHash { get; set; }
+        public byte[] PasswordHash { get; set; }
+
+        /// <summary>
+        /// Kullanıcının şifre salt'i.
+        /// </summary>
+        [Column("password_salt")]
+        public byte[] PasswordSalt { get; set; }
 
         /// <summary>
         /// Kullanıcının adı

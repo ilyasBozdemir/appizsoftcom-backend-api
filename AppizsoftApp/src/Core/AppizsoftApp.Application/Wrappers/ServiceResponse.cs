@@ -15,4 +15,5 @@ namespace AppizsoftApp.Application.Wrappers
             Value = value;
         }
     }
+
 }
