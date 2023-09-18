@@ -46,10 +46,10 @@ namespace AppizsoftApp.Persistence.Repositories
             }
         }
 
-        public async Task<bool> UserExists(string userName)
+        public async Task<bool> UserExists(string mailAddress)
         {
-            // Kullanıcı adı veritabanında mevcut mu kontrol et
-            return await _context.Users.AnyAsync(x => x.Username == userName);
+            // Kullanıcı  veritabanında mevcut mu kontrol et
+            return await _context.Users.AnyAsync(x => x.Email == mailAddress);
         }
 
         public async Task<User> Register(User user, string password)

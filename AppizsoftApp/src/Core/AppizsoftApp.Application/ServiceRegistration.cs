@@ -22,6 +22,8 @@ namespace AppizsoftApp.Application
             services.AddScoped<IRequestHandler<CreateUserCommand, CreateUserResult>, CreateUserCommandHandler>();
             services.AddScoped<IRequestHandler<LoginCommand, LoginResult>, LoginCommandHandler>();
             services.AddScoped<IRequestHandler<CheckSessionQuery, bool>, CheckSessionQueryHandler>();
+            services.AddScoped<IRequestHandler<ForgotPasswordQuery, ForgotPasswordResult>, ForgotPasswordQueryHandler>();
         }
     }
 }
+ 

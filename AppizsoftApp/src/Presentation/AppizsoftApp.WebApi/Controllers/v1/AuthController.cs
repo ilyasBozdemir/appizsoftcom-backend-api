@@ -7,6 +7,7 @@ using AppizsoftApp.Application.Results;
 using AppizsoftApp.Application.Validators.Auths;
 using AppizsoftApp.WebApi.Controllers.v1;
 using AutoMapper;
+using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -104,6 +105,18 @@ namespace AppizsoftApp.WebApi.Controllers
         {
             try
             {
+                var validator = new UserForLoginDtoValidator();
+                var validationResult = validator.Validate(user);
+
+                if (!validationResult.IsValid)
+                {
+                    var errors = validationResult.Errors.Select(e => e.ErrorMessage);
+                    return new JsonResult(new { errors = errors })
+                    {
+                        StatusCode = 400
+                    };
+                }
+
                 var loginCommand = new LoginCommand
                 {
                     UserName = user.UserName,
@@ -114,7 +127,7 @@ namespace AppizsoftApp.WebApi.Controllers
 
                 if (loginResult.StatusCode == (int)HttpStatusCode.OK)
                 {
-                    return new JsonResult(new {  token = loginResult.Token})
+                    return new JsonResult(new { token = loginResult.Token })
                     {
                         StatusCode = loginResult.StatusCode
                     };
@@ -135,7 +148,7 @@ namespace AppizsoftApp.WebApi.Controllers
             {
                 return StatusCode(500, $"Beklenmeyen bir hata oluştu. hata: {ex.Message}");
             }
-         
+
         }
 
         [HttpPost("logout/{user}")]
@@ -164,13 +177,29 @@ namespace AppizsoftApp.WebApi.Controllers
             return Unauthorized(new { Message = "Oturum süresi dolmuş veya geçersiz token." });
         }
 
-
-
         [HttpPost("forgot-password")]
-        public async Task<IActionResult> ForgotPasswordV1(UserForForgotPasswordDto user)
+        [AllowAnonymous]
+        public async Task<IActionResult> ForgotPasswordV1([FromBody] ForgotPasswordQuery dtoQuery)
         {
-            return Ok();
+            var forgotPasswordCommand = _mapper.Map<ForgotPasswordQuery>(dtoQuery);
+
+            var result = await _mediator.Send(forgotPasswordCommand);
+
+            if (result.IsSuccessful)
+            {
+                return Ok(new { message = result.Message });
+
+            }
+            else
+            {
+                return new JsonResult(new { error = result.Message })
+                {
+                    StatusCode = result.StatusCode
+                };
+            }
         }
+
+
         [HttpPost("reset-password")]
         public async Task<IActionResult> ResetPasswordV1(UserForResetPasswordDto user)
         {

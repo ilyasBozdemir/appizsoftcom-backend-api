@@ -8,6 +8,6 @@ namespace AppizsoftApp.Application.Dtos.Auth
 {
     public class UserForResetPasswordDto
     {
-        public string mailAddreess { get; set; }
+        public string Email { get; set; }
     }
 }
