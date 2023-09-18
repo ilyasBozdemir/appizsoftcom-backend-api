@@ -3,17 +3,14 @@ using AppizsoftApp.Application.Exceptions.AuthExceptions;
 using AppizsoftApp.Application.Features.Auths.Commands;
 using AppizsoftApp.Application.Features.Auths.Queries;
 using AppizsoftApp.Application.Features.Auths.Results;
-using AppizsoftApp.Application.Features.Users.Queries;
 using AppizsoftApp.Application.Results;
-using AppizsoftApp.Application.Validators;
 using AppizsoftApp.Application.Validators.Auths;
 using AppizsoftApp.WebApi.Controllers.v1;
 using AutoMapper;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.Amqp.Encoding;
 using System.Net;
-using System.Threading;
 
 namespace AppizsoftApp.WebApi.Controllers
 {
@@ -32,6 +29,7 @@ namespace AppizsoftApp.WebApi.Controllers
     [Route("api/v1/auth")]
     [Produces("application/json")]
     [Consumes("application/json")]
+    [Authorize]
     public class AuthController : ApiControllerBase
     {
         private readonly IMediator _mediator;
@@ -48,6 +46,7 @@ namespace AppizsoftApp.WebApi.Controllers
         [ProducesResponseType(typeof(ResponseResult<CreateUserResult>), 400)]
         [ProducesResponseType(typeof(ResponseResult<CreateUserResult>), 404)]
         [ProducesResponseType(typeof(ResponseResult<CreateUserResult>), 500)]
+        [AllowAnonymous]
         public async Task<IActionResult> RegisterUserV1([FromBody] UserForRegisterDto userForRegister, CancellationToken cancellationToken)
         {
             try
@@ -100,6 +99,7 @@ namespace AppizsoftApp.WebApi.Controllers
         [ProducesResponseType(typeof(ResponseResult<LoginResult>), 400)]
         [ProducesResponseType(typeof(ResponseResult<LoginResult>), 404)]
         [ProducesResponseType(typeof(ResponseResult<LoginResult>), 500)]
+        [AllowAnonymous]
         public async Task<IActionResult> LoginUserV1([FromBody] UserForLoginDto user)
         {
             try
@@ -146,6 +146,7 @@ namespace AppizsoftApp.WebApi.Controllers
         }
 
         [HttpPost("checksession")]
+        [AllowAnonymous]
         public async Task<IActionResult> CheckSession([FromBody] UserForSessionCheckDto model)
         {
             var checkSessionQuery = new CheckSessionQuery
@@ -178,3 +179,4 @@ namespace AppizsoftApp.WebApi.Controllers
 
     }
 }
+
