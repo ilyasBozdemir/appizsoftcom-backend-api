@@ -16,8 +16,6 @@ namespace AppizsoftApp.Application.Features.Auths.Commands
 {
     public class CreateUserCommand : IRequest<CreateUserResult>
     {
-        public Guid Id { get; set; }
-        public string UserName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
 
@@ -49,7 +47,7 @@ namespace AppizsoftApp.Application.Features.Auths.Commands
 
         public async Task<CreateUserResult> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
-            var result = await _authRepository.UserExists(request.UserName);
+            var result = await _authRepository.UserExists(request.Email);
 
             if (!result)
             {
@@ -60,9 +58,10 @@ namespace AppizsoftApp.Application.Features.Auths.Commands
                 request.PasswordHash = passwordHash;
 
                 var user = _mapper.Map<User>(request);
+                user.UserId = Guid.NewGuid();
                 user.CreatedAt = DateTime.Now;
 
-                 var createdUser = await _authRepository.Register(user, request.Password);
+                var createdUser = await _authRepository.Register(user, request.Password);
 
                 return new CreateUserResult
                 {

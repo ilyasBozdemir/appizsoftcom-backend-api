@@ -13,7 +13,7 @@ namespace AppizsoftApp.Application.Features.Auths.Commands
 {
     public class LoginCommand : IRequest<LoginResult>
     {
-        public string UserName { get; set; }
+        public string Email { get; set; }
         public string Password { get; set; }
     }
 
@@ -31,7 +31,7 @@ namespace AppizsoftApp.Application.Features.Auths.Commands
         public async Task<LoginResult> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
             // Kullanıcı girişini doğrula
-            var user = await _authRepository.Login(request.UserName, request.Password);
+            var user = await _authRepository.Login(request.Email, request.Password);
             if (user == null)
             {
                 return new LoginResult

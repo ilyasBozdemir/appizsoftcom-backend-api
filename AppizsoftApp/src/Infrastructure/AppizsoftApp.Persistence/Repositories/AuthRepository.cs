@@ -13,9 +13,9 @@ namespace AppizsoftApp.Persistence.Repositories
             _context = context;
         }
 
-        public async Task<User> Login(string userName, string password)
+        public async Task<User> Login(string Email, string password)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == userName);
+            var user = await _context.Users.FirstOrDefaultAsync(x =>  x.Email == Email);
 
             if(user == null)
             {

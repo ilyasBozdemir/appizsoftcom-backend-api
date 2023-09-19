@@ -61,7 +61,7 @@ namespace AppizsoftApp.Infrastructure.Services
                     new Claim(JwtRegisteredClaimNames.Sub, _configuration["JwtSettings:Subject"]),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                     new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
-                    new Claim("Username", user.Username),
+                    new Claim("Email", user.Email),
                     new Claim("Role", roleAsString),
                };
         }

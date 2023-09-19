@@ -14,19 +14,13 @@ namespace AppizsoftApp.Domain.Entities
         /// </summary>
 
         [Column("user_id")]
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
         /// <summary>
         /// Kullanıcının rol kimliği.
         /// </summary>
         /// 
         [Column("role_id")]
         public int RoleId { get; set; }
-
-        /// <summary>
-        /// Kullanıcının kullanıcı adı.
-        /// </summary>
-        [Column("username")]
-        public string Username { get; set; }
 
         /// <summary>
         /// Kullanıcının e-posta adresi.

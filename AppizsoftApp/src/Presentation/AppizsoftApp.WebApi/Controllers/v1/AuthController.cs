@@ -118,7 +118,7 @@ namespace AppizsoftApp.WebApi.Controllers
 
                 var loginCommand = new LoginCommand
                 {
-                    UserName = user.UserName,
+                    Email = user.Email,
                     Password = user.Password
                 };
 
@@ -147,7 +147,6 @@ namespace AppizsoftApp.WebApi.Controllers
             {
                 return StatusCode(500, $"Beklenmeyen bir hata oluştu. hata: {ex.Message}");
             }
-
         }
 
         [HttpPost("logout/{user}")]
