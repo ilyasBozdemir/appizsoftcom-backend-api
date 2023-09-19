@@ -9,7 +9,7 @@ namespace AppizsoftApp.Application.Features.Auths.Queries
 {
     // burası daha işlencektir
     // await _emailService.SendEmailAsync(request.Email, subject, body); kısmı calısmaz çünkü smtp ayarı yapılmadı
-    public class ForgotPasswordQuery : IRequest<ForgotPasswordResult>
+    public class ForgotPasswordQuery : IRequest<ForgotPasswordResult> 
     {
         public string Email { get; set; }
     }

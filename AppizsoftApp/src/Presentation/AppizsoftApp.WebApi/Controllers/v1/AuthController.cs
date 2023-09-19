@@ -7,7 +7,6 @@ using AppizsoftApp.Application.Results;
 using AppizsoftApp.Application.Validators.Auths;
 using AppizsoftApp.WebApi.Controllers.v1;
 using AutoMapper;
-using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
