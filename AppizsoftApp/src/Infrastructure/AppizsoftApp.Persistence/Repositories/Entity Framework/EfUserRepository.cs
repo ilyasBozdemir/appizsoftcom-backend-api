@@ -14,7 +14,7 @@ namespace AppizsoftApp.Persistence.Repositories.Entity_Framework
     /// <summary>
     /// Entity Framework kullanarak kullanıcı verilerini yönetmek için özelleştirilmiş bir IRepository uygulamasıdır.
     /// </summary>
-    public class EfUserRepository : EfRepository<User>, IUserRepositoryEF
+    public class EfUserRepository : EfBaseRepository<User>, IUserRepositoryEF
     {
         public EfUserRepository(DbContext dbContext) : base(dbContext)
         {
@@ -56,12 +56,12 @@ namespace AppizsoftApp.Persistence.Repositories.Entity_Framework
             throw new NotImplementedException();
         }
 
-        Task<IEnumerable<User>> IRepository<User>.GetAll()
+        Task<IEnumerable<User>> IBaseRepository<User>.GetAll()
         {
             throw new NotImplementedException();
         }
 
-        Task<IEnumerable<User>> IRepository<User>.GetAllAsync()
+        Task<IEnumerable<User>> IBaseRepository<User>.GetAllAsync()
         {
             throw new NotImplementedException();
         }

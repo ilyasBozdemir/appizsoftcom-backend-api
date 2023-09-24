@@ -3,7 +3,7 @@ using AppizsoftApp.Domain.Entities;
 
 namespace AppizsoftApp.Application.Interfaces.Repositories
 {
-    public interface IUserRepository : IRepository<User>
+    public interface IUserRepository : IBaseRepository<User>
     {
       
     }

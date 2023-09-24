@@ -1,6 +1,7 @@
 ﻿using AppizsoftApp.Application.Interfaces;
 using AppizsoftApp.Application.Interfaces.Services;
 using AppizsoftApp.Infrastructure.Services;
+using AppizsoftApp.Infrastructure.Services.Common;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AppizsoftApp.Infrastructure
@@ -11,6 +12,7 @@ namespace AppizsoftApp.Infrastructure
         {
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IEmailService, SmtpEmailService>();
+            services.AddTransient<IPasswordService, PasswordService>();
         }
     }
 }

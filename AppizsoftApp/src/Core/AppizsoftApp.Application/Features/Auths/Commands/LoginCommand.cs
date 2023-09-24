@@ -41,7 +41,7 @@ namespace AppizsoftApp.Application.Features.Auths.Commands
                 };
             }
 
-            // Başarılı giriş durumunda bir JWT token oluştur
+            // Başarılı giriş durumunda bir JWT token oluştur.
             var token = _tokenService.GenerateToken(user);
 
             return new LoginResult

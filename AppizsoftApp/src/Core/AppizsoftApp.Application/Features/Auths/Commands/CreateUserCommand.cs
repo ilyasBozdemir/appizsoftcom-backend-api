@@ -3,6 +3,7 @@ using AppizsoftApp.Application.Enums;
 using AppizsoftApp.Application.Exceptions.AuthExceptions;
 using AppizsoftApp.Application.Features.Auths.Results;
 using AppizsoftApp.Application.Interfaces.Repositories;
+using AppizsoftApp.Application.Interfaces.Services;
 using AppizsoftApp.Domain.Entities;
 using AutoMapper;
 using MediatR;
@@ -38,11 +39,13 @@ namespace AppizsoftApp.Application.Features.Auths.Commands
     {
 
         private readonly IAuthRepository _authRepository;
+        private readonly IPasswordService _passwordService;
         private readonly IMapper _mapper;
-        public CreateUserCommandHandler(IAuthRepository authRepository, IMapper mapper)
+        public CreateUserCommandHandler(IAuthRepository authRepository, IMapper mapper, IPasswordService passwordService)
         {
             _authRepository = authRepository;
             _mapper = mapper;
+            _passwordService = passwordService;
         }
 
         public async Task<CreateUserResult> Handle(CreateUserCommand request, CancellationToken cancellationToken)
@@ -52,7 +55,8 @@ namespace AppizsoftApp.Application.Features.Auths.Commands
             if (!result)
             {
                 byte[] passwordHash, passwordSalt;
-                CreatePasswordHash(request.Password, out passwordHash, out passwordSalt);
+
+                _passwordService. CreatePasswordHash(request.Password, out passwordHash, out passwordSalt);
 
                 request.PasswordSalt = passwordSalt;
                 request.PasswordHash = passwordHash;
@@ -80,15 +84,5 @@ namespace AppizsoftApp.Application.Features.Auths.Commands
                 };
             }
         }
-
-        private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
-        {
-            using (var hmac = new System.Security.Cryptography.HMACSHA512())
-            {
-                passwordSalt = hmac.Key;
-                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-            }
-        }
-
     }
 }

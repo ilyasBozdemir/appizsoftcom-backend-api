@@ -1,5 +1,6 @@
 ﻿using AppizsoftApp.Application.Dtos.Auth;
 using AppizsoftApp.Application.Dtos.User;
+using AppizsoftApp.Application.Interfaces.Services;
 using AppizsoftApp.Domain.Entities;
 using AppizsoftApp.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
@@ -12,11 +13,12 @@ namespace AppizsoftApp.Persistence.Repositories.Entity_Framework
     public class EfAuthRepository : AuthRepository
     {
         private readonly AppizsoftAppDBContext _context;
-        public EfAuthRepository(AppizsoftAppDBContext context):base(context)
+        private readonly IPasswordService _passwordService;
+        public EfAuthRepository(AppizsoftAppDBContext context, IPasswordService _passwordService) : base(context, _passwordService)
         {
             _context = context;
         }
-        public async Task<User> Login(string userName, string password)
+        public new async Task<User> Login(string userName, string password)
         {
            return await base.Login(userName, password);
         }

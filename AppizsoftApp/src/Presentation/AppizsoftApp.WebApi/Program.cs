@@ -9,10 +9,14 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
 using System.Text;
 using MediatR;
+using System.Threading.RateLimiting;
+using Microsoft.AspNetCore.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddHttpContextAccessor();
+
 
 #region MediatR servise eklenmesi
 //builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
@@ -91,6 +95,24 @@ builder.Services.AddCors(options =>
 
 #endregion
 
+
+
+#region Rate Limiter  Services Register
+
+builder.Services.AddRateLimiter(options =>
+{
+    options.AddFixedWindowLimiter("Basic", _options =>
+    {
+        _options.Window = TimeSpan.FromSeconds(5);
+        _options.PermitLimit = 4;
+        _options.QueueLimit = 2;
+        _options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+    });
+});
+
+
+#endregion
+
 #region Jwt Ayarý servise eklenmesi
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 var secretKey = jwtSettings["SecretKey"];
@@ -117,7 +139,6 @@ builder.Services.AddAuthentication(options =>
 
 #endregion
 
-
 #region Katmanlarýn servis kayýtlarý
 
 builder.Services.AddApplicationRegistration();
@@ -139,6 +160,7 @@ AddApiVersioning(setup =>
 #endregion
 
 var app = builder.Build();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -148,9 +170,22 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v2/swagger.json", "Appizsoft Software API V2");
     });
 }
+
+#region #region Rate Limiter middleware
+
+app.UseRateLimiter();
+
+#endregion
+
+
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.UseAuthentication();
+
+#region Cors middleware
 app.UseCors("AllowLocalhost3000");
+#endregion
+
+
 app.MapControllers();
 app.Run();
