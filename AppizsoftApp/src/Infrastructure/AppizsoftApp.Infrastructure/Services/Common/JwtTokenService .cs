@@ -66,6 +66,7 @@ namespace AppizsoftApp.Infrastructure.Services.Common
 
             return new[] {
                     new Claim(JwtRegisteredClaimNames.Sub, _configuration["JwtSettings:Subject"]),
+                    new Claim(JwtRegisteredClaimNames.Iss, _configuration["JwtSettings:Issuer"]),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                     new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
                     new Claim("Email", user.Email),
