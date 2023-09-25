@@ -1,4 +1,5 @@
-﻿using AppizsoftApp.Application.Interfaces.Repositories;
+﻿using AppizsoftApp.Application.Features.Auths.Results;
+using AppizsoftApp.Application.Interfaces.Repositories;
 using AppizsoftApp.Application.Interfaces.Services;
 using AppizsoftApp.Domain.Entities;
 using AppizsoftApp.Persistence.Context;
@@ -46,6 +47,40 @@ namespace AppizsoftApp.Persistence.Repositories
             await _context.SaveChangesAsync();
             return user;
         }
+
+        public async Task<ResetPasswordResult>  UpdatePassword(string email, string currentPassword, string newPassword)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+
+            var result = new ResetPasswordResult();
+         
+
+
+            if (user == null || !_passwordService.VerifyPasswordHash(currentPassword, user.PasswordHash, user.PasswordSalt))
+            {
+                return result = new ResetPasswordResult()
+                {
+                    Message = "Şifre sıfırlama başarısız!",
+                    Success = false
+                };
+            }
+
+            _passwordService.CreatePasswordHash(newPassword, out byte[] passwordHash, out byte[] passwordSalt);
+
+            user.PasswordHash = passwordHash;
+            user.PasswordSalt = passwordSalt;
+
+            // Değişiklikleri veritabanına kaydet
+            await _context.SaveChangesAsync();
+
+            return result = new ResetPasswordResult()
+            {
+                Message = "Şifre sıfırlama başarılı!",
+                Success = true
+            };
+        }
+
+       
     }
 
 }

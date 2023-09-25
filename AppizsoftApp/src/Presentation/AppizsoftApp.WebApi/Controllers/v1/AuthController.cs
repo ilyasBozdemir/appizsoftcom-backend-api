@@ -14,16 +14,7 @@ using System.Net;
 
 namespace AppizsoftApp.WebApi.Controllers
 {
-    /// <summary>
-    /// register user
-    /// </summary>
-    /// <remarks>
-    /// Sample request:
-    ///     POST /api/v1/auth/register
-    /// </remarks>
-    /// <param name="user">user of User</param>
-    /// <returns>User information</returns>
-    /// 
+
     [ApiController]
     [ApiVersion("1")]
     [Route("api/v1/auth")]
@@ -204,11 +195,11 @@ namespace AppizsoftApp.WebApi.Controllers
 
             if (result.Success)
             {
-                return Ok(result); // 200 (Başarılı) yanıt
+                return Ok(result);
             }
             else
             {
-                return BadRequest(result); // 400 (Hatalı İstek) yanıt
+                return BadRequest(result);
             }
         }
 

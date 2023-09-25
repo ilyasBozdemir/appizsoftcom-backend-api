@@ -1,4 +1,6 @@
 ﻿using AppizsoftApp.Application.Features.Auths.Results;
+using AppizsoftApp.Application.Interfaces.Repositories;
+using AppizsoftApp.Application.Interfaces.Services;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -12,24 +14,33 @@ namespace AppizsoftApp.Application.Features.Auths.Commands
     {
         public string Email { get; set; }
         public string Token { get; set; }
+        public string CurrentPassword { get; set; }
         public string NewPassword { get; set; }
     }
     public class ResetPasswordCommandHandler : IRequestHandler<ResetPasswordCommand, ResetPasswordResult>
     {
-        // Bu işleyici, gerçek şifre sıfırlama mantığını burada uygular
+        private readonly IAuthRepository _authRepository;
+        private readonly ITokenService _tokenService;
+        public ResetPasswordCommandHandler(IAuthRepository authRepository, ITokenService tokenService)
+        {
+            _authRepository = authRepository;
+            _tokenService = tokenService;
+        }
+
         public async Task<ResetPasswordResult> Handle(ResetPasswordCommand request, CancellationToken cancellationToken)
         {
-            // TODO: Token'in geçerliliğini kontrol et
-            // TODO: Kullanıcının şifresini sıfırla
-
-
-
-            // Başarı durumunu döndür
-            return new ResetPasswordResult()
+            var tokenIsValid = _tokenService.ValidateToken(request.Token);
+            if (!tokenIsValid)
             {
-                Success = true,
-                Message = "",
-            };
+                return new ResetPasswordResult()
+                {
+                    Success = false,
+                    Message = "Geçersiz token veya kullanıcı.",
+                };
+            }
+
+            return await _authRepository.UpdatePassword(request.Email, request.CurrentPassword, request.NewPassword);
+
         }
     }
 }
