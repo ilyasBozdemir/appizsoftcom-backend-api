@@ -15,6 +15,10 @@ namespace AppizsoftApp.Application.Mapping
             CreateMap<User, UserForRegisterDto>().ReverseMap();
             CreateMap<User, CreateUserCommand>().ReverseMap();
             CreateMap<UserForForgotPasswordDto, ForgotPasswordQuery>().ReverseMap();
+
+
+            CreateMap<UserForResetPasswordDto, ResetPasswordCommand>().ReverseMap();
+
         }
     }
 }

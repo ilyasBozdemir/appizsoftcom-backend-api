@@ -1,14 +1,9 @@
-﻿using AppizsoftApp.Application.Configurations;
-using AppizsoftApp.Application.Enums;
-using AppizsoftApp.Application.Interfaces;
+﻿using AppizsoftApp.Application.Enums;
 using AppizsoftApp.Application.Interfaces.Services;
 using AppizsoftApp.Domain.Entities;
-using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -69,8 +64,8 @@ namespace AppizsoftApp.Infrastructure.Services.Common
                     new Claim(JwtRegisteredClaimNames.Iss, _configuration["JwtSettings:Issuer"]),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                     new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
-                    new Claim("Email", user.Email),
-                    new Claim("Role", roleAsString),
+                    new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                    new Claim(ClaimTypes.Role, roleAsString),
                };
         }
 

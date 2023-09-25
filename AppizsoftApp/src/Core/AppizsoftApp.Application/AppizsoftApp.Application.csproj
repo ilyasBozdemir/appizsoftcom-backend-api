@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Exceptions\UserExceptions\" />
+    <Folder Include="Features\Users\Commands\" />
+    <Folder Include="Features\Users\Queries\" />
     <Folder Include="Features\Users\Results\" />
     <Folder Include="Swagger\" />
   </ItemGroup>

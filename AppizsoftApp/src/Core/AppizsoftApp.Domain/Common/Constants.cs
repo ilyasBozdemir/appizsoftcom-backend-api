@@ -11,6 +11,7 @@ namespace AppizsoftApp.Domain.Common
         public static class Constants
         {
             // Kullanıcı rolleri için sabitler
+            public const string SuperAdminRole = "SuperAdmin";
             public const string AdminRole = "Admin";
             public const string UserRole = "User";
 

@@ -23,6 +23,10 @@ namespace AppizsoftApp.Application
             services.AddScoped<IRequestHandler<LoginCommand, LoginResult>, LoginCommandHandler>();
             services.AddScoped<IRequestHandler<CheckSessionQuery, CheckSessionResult>, CheckSessionQueryHandler>();
             services.AddScoped<IRequestHandler<ForgotPasswordQuery, ForgotPasswordResult>, ForgotPasswordQueryHandler>();
+
+            services.AddScoped<IRequestHandler<ResetPasswordCommand, ResetPasswordResult>, ResetPasswordCommandHandler>();
+
+            
         }
     }
 }

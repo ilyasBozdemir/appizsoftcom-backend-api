@@ -29,7 +29,7 @@ namespace AppizsoftApp.WebApi.Controllers
     [Route("api/v1/auth")]
     [Produces("application/json")]
     [Consumes("application/json")]
-    [Authorize]
+    [Authorize(Roles = "SuperAdmin")]
     public class AuthController : ApiControllerBase
     {
         private readonly IMediator _mediator;
@@ -39,14 +39,13 @@ namespace AppizsoftApp.WebApi.Controllers
         {
             _mediator = mediator;
             _mapper = mapper;
-
         }
         [HttpPost("register")]
         [ProducesResponseType(typeof(ResponseResult<CreateUserResult>), 201)]
         [ProducesResponseType(typeof(ResponseResult<CreateUserResult>), 400)]
         [ProducesResponseType(typeof(ResponseResult<CreateUserResult>), 404)]
         [ProducesResponseType(typeof(ResponseResult<CreateUserResult>), 500)]
-        [AllowAnonymous]
+        [AllowAnonymous]//ilerde bu Authorize olucak
         public async Task<IActionResult> RegisterUserV1([FromBody] UserForRegisterDto userForRegister, CancellationToken cancellationToken)
         {
             try
@@ -157,7 +156,7 @@ namespace AppizsoftApp.WebApi.Controllers
         }
 
         [HttpPost("checksession")]
-        [AllowAnonymous]
+
         public async Task<IActionResult> CheckSession([FromBody] UserForSessionCheckDto model)
         {
             var checkSessionQuery = new CheckSessionQuery
@@ -176,7 +175,6 @@ namespace AppizsoftApp.WebApi.Controllers
         }
 
         [HttpPost("forgot-password")]
-        [AllowAnonymous]
         public async Task<IActionResult> ForgotPasswordV1([FromBody] ForgotPasswordQuery dtoQuery)
         {
             var forgotPasswordCommand = _mapper.Map<ForgotPasswordQuery>(dtoQuery);
@@ -201,7 +199,17 @@ namespace AppizsoftApp.WebApi.Controllers
         [HttpPost("reset-password")]
         public async Task<IActionResult> ResetPasswordV1(UserForResetPasswordDto user)
         {
-            return Ok();
+            var resetPasswordCommand = _mapper.Map<ResetPasswordCommand>(user);
+            var result = await _mediator.Send(resetPasswordCommand);
+
+            if (result.Success)
+            {
+                return Ok(result); // 200 (Başarılı) yanıt
+            }
+            else
+            {
+                return BadRequest(result); // 400 (Hatalı İstek) yanıt
+            }
         }
 
     }
