@@ -581,6 +581,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
           "Newtonsoft.Json": "13.0.3",
           "System.Configuration.ConfigurationManager": "7.0.0",
+          "System.IdentityModel.Tokens.Jwt": "6.15.1",
           "System.Text.Json": "7.0.3"
         },
         "compile": {

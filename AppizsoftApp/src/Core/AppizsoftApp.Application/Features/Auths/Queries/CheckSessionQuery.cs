@@ -1,18 +1,20 @@
-﻿using AppizsoftApp.Application.Interfaces;
+﻿using AppizsoftApp.Application.Features.Auths.Results;
+using AppizsoftApp.Application.Interfaces.Services;
 using MediatR;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AppizsoftApp.Application.Features.Auths.Queries
 {
-    public class CheckSessionQuery : IRequest<bool>
+    public class CheckSessionQuery : IRequest<CheckSessionResult>
     {
         public string Token { get; set; }
     }
-    public class CheckSessionQueryHandler : IRequestHandler<CheckSessionQuery, bool>
+    public class CheckSessionQueryHandler : IRequestHandler<CheckSessionQuery, CheckSessionResult>
     {
         private readonly ITokenService _tokenService;
 
@@ -21,10 +23,22 @@ namespace AppizsoftApp.Application.Features.Auths.Queries
             _tokenService = tokenService;
         }
 
-        public async Task<bool> Handle(CheckSessionQuery request, CancellationToken cancellationToken)
+        public async Task<CheckSessionResult> Handle(CheckSessionQuery request, CancellationToken cancellationToken)
         {
-            // Token'ı doğrula
-            return _tokenService.ValidateToken(request.Token);
+
+            var claimList = _tokenService.GetClaimsFromJwt(request.Token);
+
+            var claimDictionary = claimList.ToDictionary(c => c.Type, c => c.Value);
+
+            var result = new { Claims = claimDictionary };
+
+            return new CheckSessionResult()
+            {
+                AuthenticateResult= _tokenService.ValidateToken(request.Token),
+                Data = result
+            };
+
+
         }
     }
 }

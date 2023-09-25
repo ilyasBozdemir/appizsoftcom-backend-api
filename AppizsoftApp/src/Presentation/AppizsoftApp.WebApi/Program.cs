@@ -15,7 +15,9 @@ using Microsoft.AspNetCore.RateLimiting;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 
 
 #region MediatR servise eklenmesi
@@ -95,8 +97,6 @@ builder.Services.AddCors(options =>
 
 #endregion
 
-
-
 #region Rate Limiter  Services Register
 
 builder.Services.AddRateLimiter(options =>
@@ -114,10 +114,24 @@ builder.Services.AddRateLimiter(options =>
 #endregion
 
 #region Jwt Ayarý servise eklenmesi
+
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 var secretKey = jwtSettings["SecretKey"];
 var issuer = jwtSettings["Issuer"];
 var audience = jwtSettings["Audience"];
+
+var tokenValidationParameters = new TokenValidationParameters
+{
+    ValidateIssuer = true,
+    ValidateAudience = true,
+    ValidateLifetime = true,
+    ValidateIssuerSigningKey = true,
+    ValidIssuer = issuer, // JWT'nin geçerli olduðu yayýncý (issuer)
+    ValidAudience = audience, // JWT'nin geçerli olduðu hedef kitle (audience)
+    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)) // JWT'nin doðrulanmasý için kullanýlan anahtar
+};
+
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -125,17 +139,11 @@ builder.Services.AddAuthentication(options =>
 })
         .AddJwtBearer(options =>
         {
-            options.TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true,
-                ValidIssuer = issuer,
-                ValidAudience = audience,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
-            };
+            options.TokenValidationParameters = tokenValidationParameters;
         });
+
+// TokenValidationParameters'ý servis olarak kaydet
+builder.Services.AddSingleton(tokenValidationParameters);
 
 #endregion
 

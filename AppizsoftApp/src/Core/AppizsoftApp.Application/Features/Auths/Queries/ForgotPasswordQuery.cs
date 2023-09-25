@@ -1,14 +1,12 @@
 ﻿using AppizsoftApp.Application.Features.Auths.Results;
-using AppizsoftApp.Application.Interfaces;
 using AppizsoftApp.Application.Interfaces.Repositories;
 using AppizsoftApp.Application.Interfaces.Services;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 
 namespace AppizsoftApp.Application.Features.Auths.Queries
 {
     // burası daha işlencektir
-    // await _emailService.SendEmailAsync(request.Email, subject, body); kısmı calısmaz çünkü smtp ayarı yapılmadı
+    // await _emailService.SendEmailAsync(request.Email, subject, body); kısmı calısmaz çünkü smtp ayarı yapılmadı.
     public class ForgotPasswordQuery : IRequest<ForgotPasswordResult> 
     {
         public string Email { get; set; }
@@ -65,7 +63,7 @@ namespace AppizsoftApp.Application.Features.Auths.Queries
 
         private string GenerateResetLink(string email)
         {
-             string token = _tokenService.RefreshToken(email);
+            string token = "_tokenService.RefreshToken(email)";
              return $"https://appizsoft.com/reset-password?token={token}";
         }
 

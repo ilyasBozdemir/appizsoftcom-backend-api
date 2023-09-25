@@ -165,11 +165,11 @@ namespace AppizsoftApp.WebApi.Controllers
                 Token = model.Token
             };
 
-            var sessionValid = await _mediator.Send(checkSessionQuery);
+            var checkSessionResult = await _mediator.Send(checkSessionQuery);
 
-            if (sessionValid)
+            if (checkSessionResult.AuthenticateResult)
             {
-                return Ok(new { Message = "Oturum hala geçerli." });
+                return Ok(new { message = "Oturum hala geçerli.", data = checkSessionResult.Data });
             }
 
             return Unauthorized(new { Message = "Oturum süresi dolmuş veya geçersiz token." });

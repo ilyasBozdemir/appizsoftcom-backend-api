@@ -1,7 +1,7 @@
 ﻿using AppizsoftApp.Application.Features.Auths.Queries;
 using AppizsoftApp.Application.Features.Auths.Results;
-using AppizsoftApp.Application.Interfaces;
 using AppizsoftApp.Application.Interfaces.Repositories;
+using AppizsoftApp.Application.Interfaces.Services;
 using MediatR;
 using System;
 using System.Collections.Generic;
