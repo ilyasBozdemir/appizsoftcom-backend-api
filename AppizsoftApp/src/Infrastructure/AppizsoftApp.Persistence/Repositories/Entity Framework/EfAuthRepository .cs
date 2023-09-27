@@ -1,5 +1,4 @@
 ﻿using AppizsoftApp.Application.Dtos.Auth;
-using AppizsoftApp.Application.Dtos.User;
 using AppizsoftApp.Application.Interfaces.Services;
 using AppizsoftApp.Domain.Entities;
 using AppizsoftApp.Persistence.Context;

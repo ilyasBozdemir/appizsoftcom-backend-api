@@ -7,10 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Dtos\AuthToken\" />
     <Folder Include="Exceptions\UserExceptions\" />
+    <Folder Include="Features\AuthToken\Commands\" />
+    <Folder Include="Features\AuthToken\Queries\" />
+    <Folder Include="Features\AuthToken\Results\" />
     <Folder Include="Features\Users\Commands\" />
     <Folder Include="Features\Users\Queries\" />
     <Folder Include="Features\Users\Results\" />
+    <Folder Include="CustomAttributes\" />
+    <Folder Include="Interfaces\Repositories\Dapper\" />
+    <Folder Include="Subcribers\" />
     <Folder Include="Swagger\" />
   </ItemGroup>
 

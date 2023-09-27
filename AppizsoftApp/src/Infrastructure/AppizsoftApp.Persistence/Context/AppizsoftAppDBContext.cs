@@ -11,13 +11,14 @@ namespace AppizsoftApp.Persistence.Context
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<AuthToken> AuthTokens { get; set; }
 
-        // Diğer DbSet özellikleri (örneğin, diğer varlıklar) eklenebilir
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
-            
+            base.OnModelCreating(modelBuilder);
+
+
         }
     }
 }

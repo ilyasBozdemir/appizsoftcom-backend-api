@@ -11,6 +11,7 @@ using System.Text;
 using MediatR;
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.RateLimiting;
+using AppizsoftApp.Application.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -209,9 +210,11 @@ app.UseRateLimiter();
 
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<AuthorizationMiddleware>();
+
 app.UseAuthentication();
 app.UseAuthorization();
-
 
 #region Cors middleware
 app.UseCors("AllowLocalhost3000");

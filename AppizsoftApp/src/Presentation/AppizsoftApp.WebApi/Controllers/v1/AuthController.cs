@@ -20,7 +20,7 @@ namespace AppizsoftApp.WebApi.Controllers
     [Route("api/v1/auth")]
     [Produces("application/json")]
     [Consumes("application/json")]
-    [Authorize(Roles = "SuperAdmin")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class AuthController : ApiControllerBase
     {
         private readonly IMediator _mediator;
@@ -203,6 +203,20 @@ namespace AppizsoftApp.WebApi.Controllers
             }
         }
 
+        [HttpPost("verify-email")]
+        public async Task<IActionResult> VerifyEmailV1()
+        {
+            
+                return Ok();
+
+        }
+        [HttpPost("two-factor-auth")]
+        public async Task<IActionResult> TwoFactorAuthV1()
+        {
+
+            return Ok();
+
+        }
     }
 }
 
