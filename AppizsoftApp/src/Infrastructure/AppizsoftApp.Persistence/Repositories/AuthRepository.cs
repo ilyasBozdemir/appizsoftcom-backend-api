@@ -1,4 +1,4 @@
-﻿using AppizsoftApp.Application.Features.Auths.Results;
+﻿using AppizsoftApp.Application.Features.AppUser.Results;
 using AppizsoftApp.Application.Interfaces.Repositories;
 using AppizsoftApp.Application.Interfaces.Services;
 using AppizsoftApp.Domain.Entities;

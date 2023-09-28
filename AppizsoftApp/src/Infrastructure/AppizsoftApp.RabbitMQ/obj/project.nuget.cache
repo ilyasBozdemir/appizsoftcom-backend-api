@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "yIPU9ThJmO+koYX0wsm4AMpRBbSpknrXCvi/dXibe7vDbhPVH+prByltze+a/EwUMxd/Ptzkj07RZWmKxU3laQ==",
+  "dgSpecHash": "WkVjN7IOgHgbEUoKjh0bz7s2eAq8vVzS08MBYhbQDDc6t+/zmNbHsBNNqMliX1vQLWs2OC5d4e4M8Ghbn0ivpQ==",
   "success": true,
   "projectFilePath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.RabbitMQ\\AppizsoftApp.RabbitMQ.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.0.1\\microsoft.identitymodel.abstractions.7.0.1.nupkg.sha512",
+    "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.0.1\\microsoft.identitymodel.jsonwebtokens.7.0.1.nupkg.sha512",
+    "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\microsoft.identitymodel.logging\\7.0.1\\microsoft.identitymodel.logging.7.0.1.nupkg.sha512",
+    "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.0.1\\microsoft.identitymodel.tokens.7.0.1.nupkg.sha512",
+    "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.0.1\\system.identitymodel.tokens.jwt.7.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

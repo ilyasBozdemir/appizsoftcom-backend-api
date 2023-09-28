@@ -1,0 +1,12 @@
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.RabbitMQ\bin\Debug\net7.0\AppizsoftApp.RabbitMQ.deps.json
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.RabbitMQ\bin\Debug\net7.0\AppizsoftApp.RabbitMQ.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.RabbitMQ\bin\Debug\net7.0\AppizsoftApp.RabbitMQ.pdb
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.RabbitMQ\obj\Debug\net7.0\AppizsoftApp.RabbitMQ.csproj.AssemblyReference.cache
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.RabbitMQ\obj\Debug\net7.0\AppizsoftApp.RabbitMQ.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.RabbitMQ\obj\Debug\net7.0\AppizsoftApp.RabbitMQ.AssemblyInfoInputs.cache
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.RabbitMQ\obj\Debug\net7.0\AppizsoftApp.RabbitMQ.AssemblyInfo.cs
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.RabbitMQ\obj\Debug\net7.0\AppizsoftApp.RabbitMQ.csproj.CoreCompileInputs.cache
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.RabbitMQ\obj\Debug\net7.0\AppizsoftApp.RabbitMQ.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.RabbitMQ\obj\Debug\net7.0\refint\AppizsoftApp.RabbitMQ.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.RabbitMQ\obj\Debug\net7.0\AppizsoftApp.RabbitMQ.pdb
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.RabbitMQ\obj\Debug\net7.0\ref\AppizsoftApp.RabbitMQ.dll

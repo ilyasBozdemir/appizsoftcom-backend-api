@@ -1,6 +1,5 @@
 using AppizsoftApp.Application;
 using AppizsoftApp.Persistence;
-using AppizsoftApp.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -12,6 +11,7 @@ using MediatR;
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.RateLimiting;
 using AppizsoftApp.Application.Middlewares;
+using AppizsoftApp.LoggingAndMonitoring;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -174,7 +174,12 @@ builder.Services.AddSingleton(tokenValidationParameters);
 
 builder.Services.AddApplicationRegistration();
 builder.Services.AddPersistenceRegistration();
-builder.Services.AddInfrastructureRegistration();
+builder.Services.AddEmailServiceRegistration();
+builder.Services.AddRabbitMQRegistration();
+builder.Services.AddSecurityRegistration();
+builder.Services.AddSignalRRegistration();
+builder.Services.AddStorageServiceRegistration();
+
 
 #endregion
 

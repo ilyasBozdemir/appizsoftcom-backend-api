@@ -1,0 +1,17 @@
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\bin\Debug\net7.0\AppizsoftApp.EmailService.deps.json
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\bin\Debug\net7.0\AppizsoftApp.EmailService.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\bin\Debug\net7.0\AppizsoftApp.EmailService.pdb
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\bin\Debug\net7.0\AppizsoftApp.Application.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\bin\Debug\net7.0\AppizsoftApp.Domain.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\bin\Debug\net7.0\AppizsoftApp.Application.pdb
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\bin\Debug\net7.0\AppizsoftApp.Domain.pdb
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\obj\Debug\net7.0\AppizsoftApp.EmailService.csproj.AssemblyReference.cache
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\obj\Debug\net7.0\AppizsoftApp.EmailService.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\obj\Debug\net7.0\AppizsoftApp.EmailService.AssemblyInfoInputs.cache
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\obj\Debug\net7.0\AppizsoftApp.EmailService.AssemblyInfo.cs
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\obj\Debug\net7.0\AppizsoftApp.EmailService.csproj.CoreCompileInputs.cache
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\obj\Debug\net7.0\AppizsoftApp.EmailService.csproj.CopyComplete
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\obj\Debug\net7.0\AppizsoftApp.EmailService.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\obj\Debug\net7.0\refint\AppizsoftApp.EmailService.dll
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\obj\Debug\net7.0\AppizsoftApp.EmailService.pdb
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.EmailService\obj\Debug\net7.0\ref\AppizsoftApp.EmailService.dll
