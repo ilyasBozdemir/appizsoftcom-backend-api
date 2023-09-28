@@ -1,8 +1,10 @@
-﻿using AppizsoftApp.Application.Dtos.Auth;
+﻿using AppizsoftApp.Application.CustomAttributes;
+using AppizsoftApp.Application.Dtos.Auth;
+using AppizsoftApp.Application.Enums;
 using AppizsoftApp.Application.Exceptions.AuthExceptions;
-using AppizsoftApp.Application.Features.Auths.Commands;
-using AppizsoftApp.Application.Features.Auths.Queries;
-using AppizsoftApp.Application.Features.Auths.Results;
+using AppizsoftApp.Application.Features.AppUser.Commands;
+using AppizsoftApp.Application.Features.AppUser.Queries;
+using AppizsoftApp.Application.Features.AppUser.Results;
 using AppizsoftApp.Application.Results;
 using AppizsoftApp.Application.Validators.Auths;
 using AppizsoftApp.WebApi.Controllers.v1;
@@ -20,7 +22,8 @@ namespace AppizsoftApp.WebApi.Controllers
     [Route("api/v1/auth")]
     [Produces("application/json")]
     [Consumes("application/json")]
-    [Authorize(Roles = "SuperAdmin,Admin")]
+
+    [RequireAnyRole(Roles.SuperAdmin | Roles.Admin)]
     public class AuthController : ApiControllerBase
     {
         private readonly IMediator _mediator;

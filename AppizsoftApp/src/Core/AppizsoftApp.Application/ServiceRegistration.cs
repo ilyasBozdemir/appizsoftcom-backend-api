@@ -1,6 +1,6 @@
-﻿using AppizsoftApp.Application.Features.Auths.Commands;
-using AppizsoftApp.Application.Features.Auths.Queries;
-using AppizsoftApp.Application.Features.Auths.Results;
+﻿using AppizsoftApp.Application.Features.AppUser.Commands;
+using AppizsoftApp.Application.Features.AppUser.Queries;
+using AppizsoftApp.Application.Features.AppUser.Results;
 using AppizsoftApp.Application.Features.Users.Queries;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;

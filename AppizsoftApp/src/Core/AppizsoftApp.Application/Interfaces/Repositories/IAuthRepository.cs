@@ -1,6 +1,6 @@
 ﻿
 using AppizsoftApp.Application.Dtos.Auth;
-using AppizsoftApp.Application.Features.Auths.Results;
+using AppizsoftApp.Application.Features.AppUser.Results;
 using AppizsoftApp.Domain.Entities;
 
 namespace AppizsoftApp.Application.Interfaces.Repositories
@@ -11,6 +11,5 @@ namespace AppizsoftApp.Application.Interfaces.Repositories
         Task<User> Login(string userName, string password);
         Task<bool> UserExists(string mailAddress);
         Task<ResetPasswordResult> UpdatePassword(string email, string currentPassword, string newPassword);
-
     }
 }

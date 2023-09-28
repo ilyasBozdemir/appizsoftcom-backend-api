@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace AppizsoftApp.Application.Enums
 {
-  
-    public enum Roles : byte
+
+    [Flags]
+    public enum Roles
     {
-        SuperAdmin = 0,
-        Admin = 1,
-        User = 2,
-        Editor = 3
+        None = 0,
+        SuperAdmin = 1,
+        Admin = 2,
+        User = 4,
+        Editor = 8
     }
 }

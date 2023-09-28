@@ -1,6 +1,6 @@
 ﻿using AppizsoftApp.Application.Dtos.Auth;
-using AppizsoftApp.Application.Features.Auths.Commands;
-using AppizsoftApp.Application.Features.Auths.Queries;
+using AppizsoftApp.Application.Features.AppUser.Commands;
+using AppizsoftApp.Application.Features.AppUser.Queries;
 using AppizsoftApp.Domain.Entities;
 using AutoMapper;
 
