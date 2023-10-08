@@ -16,6 +16,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.1" />
   </ItemGroup>
 
@@ -23,16 +24,13 @@
     <ProjectReference Include="..\..\Core\AppizsoftApp.Application\AppizsoftApp.Application.csproj" />
     <ProjectReference Include="..\..\Core\AppizsoftApp.Domain\AppizsoftApp.Domain.csproj" />
     <ProjectReference Include="..\..\Infrastructure\AppizsoftApp.EmailService\AppizsoftApp.EmailService.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\AppizsoftApp.Infrastructure\AppizsoftApp.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\AppizsoftApp.LoggingAndMonitoring\AppizsoftApp.LoggingAndMonitoring.csproj" />
     <ProjectReference Include="..\..\Infrastructure\AppizsoftApp.Persistence\AppizsoftApp.Persistence.csproj" />
     <ProjectReference Include="..\..\Infrastructure\AppizsoftApp.RabbitMQ\AppizsoftApp.RabbitMQ.csproj" />
     <ProjectReference Include="..\..\Infrastructure\AppizsoftApp.Security\AppizsoftApp.Security.csproj" />
     <ProjectReference Include="..\..\Infrastructure\AppizsoftApp.SignalR\AppizsoftApp.SignalR.csproj" />
     <ProjectReference Include="..\..\Infrastructure\AppizsoftApp.StorageService\AppizsoftApp.StorageService.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Middlewares\" />
   </ItemGroup>
 
 </Project>

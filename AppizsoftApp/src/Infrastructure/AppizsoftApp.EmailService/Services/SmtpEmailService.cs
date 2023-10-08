@@ -7,7 +7,7 @@ namespace AppizsoftApp.Infrastructure.Services
     using System.Net.Mail;
     using System.Threading.Tasks;
 
-    public class SmtpEmailService : IEmailService
+    public class SmtpEmailService : IMailService
     {
         private readonly IConfiguration _configuration;
         private IConfigurationSection SmtpSettings;
@@ -15,6 +15,7 @@ namespace AppizsoftApp.Infrastructure.Services
         private readonly int _smtpPort;
         private readonly string _smtpUsername;
         private readonly string _smtpPassword;
+        private readonly string _displayName;
 
         public SmtpEmailService(IConfiguration configuration)
         {
@@ -24,9 +25,9 @@ namespace AppizsoftApp.Infrastructure.Services
             _smtpPort = int.Parse(SmtpSettings["Port"]);
             _smtpUsername = SmtpSettings["Username"];
             _smtpPassword = SmtpSettings["Password"];
+            _displayName = SmtpSettings["DisplayName"];
         }
-
-        public async Task SendEmailAsync(string to, string subject, string body)
+        public async Task SendMailAsync(string[] tos, string subject, string body, bool isBodyHtml = true, byte[] attachment = null, string attachmentFileName = null)
         {
             var smtpClient = new SmtpClient
             {
@@ -44,9 +45,38 @@ namespace AppizsoftApp.Infrastructure.Services
                 IsBodyHtml = true,
             };
 
-            mailMessage.To.Add(to);
+            foreach (var to in tos)
+                mailMessage.To.Add(to);
+            mailMessage.Subject = subject;
+            mailMessage.Body = body;
+            mailMessage.IsBodyHtml = isBodyHtml;
+            mailMessage.From = new(_smtpUsername, _displayName, System.Text.Encoding.UTF8);
+
+
+            if (attachment != null && !string.IsNullOrEmpty(attachmentFileName))
+            {
+                var attachmentStream = new System.IO.MemoryStream(attachment);
+                var attachmentData = new Attachment(attachmentStream, attachmentFileName);
+                mailMessage.Attachments.Add(attachmentData);
+            }
+
+
             await smtpClient.SendMailAsync(mailMessage);
+
         }
+
+        public Task SendPasswordResetMailAsync(string to, string userId, string resetToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task SendMailAsync(string to, string subject, string body, bool isBodyHtml = true)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task SendMailAsync(string to, string subject, string body, bool isBodyHtml = true, byte[] attachment = null, string attachmentFileName = null)
+         => await SendMailAsync(new[] { to }, subject, body, isBodyHtml, attachment, attachmentFileName);
     }
 
 }

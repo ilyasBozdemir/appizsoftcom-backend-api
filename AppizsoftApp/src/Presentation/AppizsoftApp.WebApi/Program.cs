@@ -19,13 +19,6 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-
-
-#region MediatR servise eklenmesi
-//builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
-#endregion
-
 #region Swagger servise eklenmesi
 builder.Services.AddSwaggerGen(c =>
 {
@@ -179,7 +172,7 @@ builder.Services.AddRabbitMQRegistration();
 builder.Services.AddSecurityRegistration();
 builder.Services.AddSignalRRegistration();
 builder.Services.AddStorageServiceRegistration();
-
+builder.Services.AddInfrastructureServices();
 
 #endregion
 

@@ -8,7 +8,7 @@ namespace AppizsoftApp.LoggingAndMonitoring
     {
         public static void AddEmailServiceRegistration(this IServiceCollection services)
         {
-            services.AddScoped<IEmailService, SmtpEmailService>();
+            services.AddScoped<IMailService, SmtpEmailService>();
         }
     }
 }

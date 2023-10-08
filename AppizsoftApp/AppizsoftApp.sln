@@ -37,13 +37,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{672257C1-D341-4F6A-99D8-54CD99242B84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppizsoftApp.StorageService", "src\Infrastructure\AppizsoftApp.StorageService\AppizsoftApp.StorageService.csproj", "{66CEEC3F-4715-47AD-B023-08B668BB7321}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppizsoftApp.StorageService", "src\Infrastructure\AppizsoftApp.StorageService\AppizsoftApp.StorageService.csproj", "{66CEEC3F-4715-47AD-B023-08B668BB7321}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppizsoftApp.LoggingAndMonitoring", "src\Infrastructure\AppizsoftApp.LoggingAndMonitoring\AppizsoftApp.LoggingAndMonitoring.csproj", "{32F5B9BF-A6A9-4992-BE19-58CA88AEF739}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppizsoftApp.LoggingAndMonitoring", "src\Infrastructure\AppizsoftApp.LoggingAndMonitoring\AppizsoftApp.LoggingAndMonitoring.csproj", "{32F5B9BF-A6A9-4992-BE19-58CA88AEF739}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppizsoftApp.Security", "src\Infrastructure\AppizsoftApp.Security\AppizsoftApp.Security.csproj", "{A1A93C62-DE6E-4E0B-9AB0-40530685A17B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppizsoftApp.Security", "src\Infrastructure\AppizsoftApp.Security\AppizsoftApp.Security.csproj", "{A1A93C62-DE6E-4E0B-9AB0-40530685A17B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppizsoftApp.EmailService", "src\Infrastructure\AppizsoftApp.EmailService\AppizsoftApp.EmailService.csproj", "{2B076873-C32F-4C5B-84AF-FB72EAF42142}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppizsoftApp.EmailService", "src\Infrastructure\AppizsoftApp.EmailService\AppizsoftApp.EmailService.csproj", "{2B076873-C32F-4C5B-84AF-FB72EAF42142}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppizsoftApp.Infrastructure", "src\Infrastructure\AppizsoftApp.Infrastructure\AppizsoftApp.Infrastructure.csproj", "{C0FCDA09-65A0-4F48-9ED6-522B5716EFAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +93,10 @@ Global
 		{2B076873-C32F-4C5B-84AF-FB72EAF42142}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B076873-C32F-4C5B-84AF-FB72EAF42142}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B076873-C32F-4C5B-84AF-FB72EAF42142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0FCDA09-65A0-4F48-9ED6-522B5716EFAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0FCDA09-65A0-4F48-9ED6-522B5716EFAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0FCDA09-65A0-4F48-9ED6-522B5716EFAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0FCDA09-65A0-4F48-9ED6-522B5716EFAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +119,7 @@ Global
 		{32F5B9BF-A6A9-4992-BE19-58CA88AEF739} = {07A47808-5F3E-4804-BC07-FD205F235ABE}
 		{A1A93C62-DE6E-4E0B-9AB0-40530685A17B} = {07A47808-5F3E-4804-BC07-FD205F235ABE}
 		{2B076873-C32F-4C5B-84AF-FB72EAF42142} = {07A47808-5F3E-4804-BC07-FD205F235ABE}
+		{C0FCDA09-65A0-4F48-9ED6-522B5716EFAA} = {07A47808-5F3E-4804-BC07-FD205F235ABE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3729C3E0-D40D-4E74-A1AD-5B43334556AD}

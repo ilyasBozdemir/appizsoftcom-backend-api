@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AppizsoftApp.WebApi.Controllers.v1;
+using Microsoft.AspNetCore.Mvc;
 
-namespace AppizsoftApp.WebApi.Controllers.v2
+namespace AppizsoftApp.WebApi.Controllers
 {
     /*
     [ApiController]
@@ -14,6 +15,6 @@ namespace AppizsoftApp.WebApi.Controllers.v2
         {
             return "v2";
         }
-    }
-    */
+    }*/
+
 }

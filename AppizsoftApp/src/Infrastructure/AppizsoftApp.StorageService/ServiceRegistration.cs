@@ -6,8 +6,6 @@ namespace AppizsoftApp.LoggingAndMonitoring
     {
         public static void AddStorageServiceRegistration(this IServiceCollection services)
         {
-        
-
         }
     }
 }

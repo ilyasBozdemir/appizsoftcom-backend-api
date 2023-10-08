@@ -1,225 +1,41 @@
-﻿using AppizsoftApp.Application.CustomAttributes;
-using AppizsoftApp.Application.Dtos.Auth;
-using AppizsoftApp.Application.Enums;
-using AppizsoftApp.Application.Exceptions.AuthExceptions;
-using AppizsoftApp.Application.Features.AppUser.Commands;
-using AppizsoftApp.Application.Features.AppUser.Queries;
-using AppizsoftApp.Application.Features.AppUser.Results;
-using AppizsoftApp.Application.Results;
-using AppizsoftApp.Application.Validators.Auths;
-using AppizsoftApp.WebApi.Controllers.v1;
-using AutoMapper;
+﻿using AppizsoftApp.Application.Features.Commands.LoginUser;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 
-namespace AppizsoftApp.WebApi.Controllers
+namespace AppizsoftApp.WebApi.Controllers.v1
 {
-
-    [ApiController]
-    [ApiVersion("1")]
+    /// <summary>
+    /// Kimlik doğrulama ve oturum yönetimi işlemlerini yöneten API kontrolcüsü.
+    /// </summary>
     [Route("api/v1/auth")]
-    [Produces("application/json")]
-    [Consumes("application/json")]
-
-    [RequireAnyRole(Roles.SuperAdmin | Roles.Admin)]
-    public class AuthController : ApiControllerBase
+    [ApiVersion("1")]
+    [ApiController]
+    public class AuthController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly IMapper _mapper;
 
-        public AuthController(IMediator mediator, IMapper mapper) : base(mediator, mapper)
+        /// <summary>
+        /// AuthController sınıfının yapıcı metodu. 
+        /// </summary>
+        /// <param name="mediator">Mediator servisini enjekte etmek için kullanılır.</param>
+        public AuthController(IMediator mediator)
         {
             _mediator = mediator;
-            _mapper = mapper;
-        }
-        [HttpPost("register")]
-        [ProducesResponseType(typeof(ResponseResult<CreateUserResult>), 201)]
-        [ProducesResponseType(typeof(ResponseResult<CreateUserResult>), 400)]
-        [ProducesResponseType(typeof(ResponseResult<CreateUserResult>), 404)]
-        [ProducesResponseType(typeof(ResponseResult<CreateUserResult>), 500)]
-        [AllowAnonymous]//ilerde bu Authorize olucak
-        public async Task<IActionResult> RegisterUserV1([FromBody] UserForRegisterDto userForRegister, CancellationToken cancellationToken)
-        {
-            try
-            {
-                var validator = new UserForRegisterDtoValidator();
-                var validationResult = validator.Validate(userForRegister);
-
-                if (!validationResult.IsValid)
-                {
-                    var errors = validationResult.Errors.Select(e => e.ErrorMessage);
-                    return new JsonResult(new { errors = errors })
-                    {
-                        StatusCode = 400
-                    };
-                }
-
-                var createUserCommandDto = _mapper.Map<CreateUserCommand>(userForRegister);
-                var createUserResult = await _mediator.Send(createUserCommandDto, cancellationToken);
-                if (createUserResult.StatusCode == (int)HttpStatusCode.Created)
-                {
-                    return new JsonResult(new { message = createUserResult.Message, user = createUserResult.User })
-                    {
-                        StatusCode = createUserResult.StatusCode
-                    };
-                }
-                else
-                {
-                    return new JsonResult(new { error = createUserResult.Message })
-                    {
-                        StatusCode = createUserResult.StatusCode
-                    };
-                }
-            }
-            catch (EmptyUserException ex)
-            {
-                return BadRequest(new { error = ex.Message });
-            }
-            catch (UserAlreadyExistsException ex)
-            {
-                return Conflict(new { error = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Beklenmeyen bir hata oluştu. hata: {ex.Message}");
-            }
         }
 
+        /// <summary>
+        /// Kullanıcının oturum açma işlemini gerçekleştirir.
+        /// </summary>
+        /// <param name="loginUserCommandRequest">Oturum açma isteği.</param>
+        /// <returns>Oturum açma işlemi sonucunda dönen yanıt.</returns>
         [HttpPost("login")]
-        [ProducesResponseType(typeof(ResponseResult<LoginResult>), 200)]
-        [ProducesResponseType(typeof(ResponseResult<LoginResult>), 400)]
-        [ProducesResponseType(typeof(ResponseResult<LoginResult>), 404)]
-        [ProducesResponseType(typeof(ResponseResult<LoginResult>), 500)]
-        [AllowAnonymous]
-        public async Task<IActionResult> LoginUserV1([FromBody] UserForLoginDto user)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Login(LoginUserCommandRequest loginUserCommandRequest)
         {
-            try
-            {
-                var validator = new UserForLoginDtoValidator();
-                var validationResult = validator.Validate(user);
-
-                if (!validationResult.IsValid)
-                {
-                    var errors = validationResult.Errors.Select(e => e.ErrorMessage);
-                    return new JsonResult(new { errors = errors })
-                    {
-                        StatusCode = 400
-                    };
-                }
-
-                var loginCommand = new LoginCommand
-                {
-                    Email = user.Email,
-                    Password = user.Password
-                };
-
-                var loginResult = await _mediator.Send(loginCommand);
-
-                if (loginResult.StatusCode == (int)HttpStatusCode.OK)
-                {
-                    return new JsonResult(new { token = loginResult.Token })
-                    {
-                        StatusCode = loginResult.StatusCode
-                    };
-                }
-                else
-                {
-                    return new JsonResult(new { error = loginResult.Message })
-                    {
-                        StatusCode = loginResult.StatusCode
-                    };
-                }
-            }
-            catch (UserNotFoundException ex)
-            {
-                return NotFound(new { error = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Beklenmeyen bir hata oluştu. hata: {ex.Message}");
-            }
-        }
-
-        [HttpPost("logout/{user}")]
-        [ProducesResponseType(typeof(ResponseResult<LoginResult>), 200)]
-        public async Task<IActionResult> LogoutUserV1([FromBody] UserForLogoutDto user)
-        {
-            return Ok(user);
-        }
-
-        [HttpPost("checksession")]
-
-        public async Task<IActionResult> CheckSession([FromBody] UserForSessionCheckDto model)
-        {
-            var checkSessionQuery = new CheckSessionQuery
-            {
-                Token = model.Token
-            };
-
-            var checkSessionResult = await _mediator.Send(checkSessionQuery);
-
-            if (checkSessionResult.AuthenticateResult)
-            {
-                return Ok(new { message = "Oturum hala geçerli.", data = checkSessionResult.Data });
-            }
-
-            return Unauthorized(new { Message = "Oturum süresi dolmuş veya geçersiz token." });
-        }
-
-        [HttpPost("forgot-password")]
-        public async Task<IActionResult> ForgotPasswordV1([FromBody] ForgotPasswordQuery dtoQuery)
-        {
-            var forgotPasswordCommand = _mapper.Map<ForgotPasswordQuery>(dtoQuery);
-
-            var result = await _mediator.Send(forgotPasswordCommand);
-
-            if (result.IsSuccessful)
-            {
-                return Ok(new { message = result.Message });
-
-            }
-            else
-            {
-                return new JsonResult(new { error = result.Message })
-                {
-                    StatusCode = result.StatusCode
-                };
-            }
-        }
-
-
-        [HttpPost("reset-password")]
-        public async Task<IActionResult> ResetPasswordV1(UserForResetPasswordDto user)
-        {
-            var resetPasswordCommand = _mapper.Map<ResetPasswordCommand>(user);
-            var result = await _mediator.Send(resetPasswordCommand);
-
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            else
-            {
-                return BadRequest(result);
-            }
-        }
-
-        [HttpPost("verify-email")]
-        public async Task<IActionResult> VerifyEmailV1()
-        {
-            
-                return Ok();
-
-        }
-        [HttpPost("two-factor-auth")]
-        public async Task<IActionResult> TwoFactorAuthV1()
-        {
-
-            return Ok();
-
+            LoginUserCommandResponse response = await _mediator.Send(loginUserCommandRequest);
+            return Ok(response);
         }
     }
 }
-

@@ -7,20 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Dtos\AuthToken\" />
-    <Folder Include="Exceptions\UserExceptions\" />
-    <Folder Include="Features\AuthTokens\Commands\" />
-    <Folder Include="Features\AuthTokens\Queries\" />
-    <Folder Include="Features\AuthTokens\Results\" />
-    <Folder Include="Features\Users\Commands\" />
-    <Folder Include="Features\Users\Queries\" />
-    <Folder Include="Features\Users\Results\" />
-    <Folder Include="CustomAttributes\" />
+    <Folder Include="Features\Queries\" />
+    <Folder Include="Filters\" />
     <Folder Include="Interfaces\Hubs\" />
     <Folder Include="Interfaces\Storage\" />
-    <Folder Include="Interfaces\Repositories\Dapper\" />
     <Folder Include="Subcribers\" />
-    <Folder Include="Swagger\" />
+    <Folder Include="Validators\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +23,7 @@
     <PackageReference Include="MediatR" Version="12.1.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageReference Include="Microsoft.Azure.Amqp" Version="2.6.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />

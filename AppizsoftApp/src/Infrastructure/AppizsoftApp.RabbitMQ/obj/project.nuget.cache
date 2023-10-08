@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WkVjN7IOgHgbEUoKjh0bz7s2eAq8vVzS08MBYhbQDDc6t+/zmNbHsBNNqMliX1vQLWs2OC5d4e4M8Ghbn0ivpQ==",
+  "dgSpecHash": "dtwvxvyXJUyqcV48kMbu55u0B4pvImgGXt0l2Lr41wANyZQBvgVZtim7+hki2cxOm470rng9jThlDUf8BmAmVQ==",
   "success": true,
   "projectFilePath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.RabbitMQ\\AppizsoftApp.RabbitMQ.csproj",
   "expectedPackageFiles": [

@@ -15,3 +15,5 @@ D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Persistence\bin\Debug\net7.0\AppizsoftApp.Application.pdb
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Persistence\bin\Debug\net7.0\AppizsoftApp.Domain.pdb
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Persistence\obj\Debug\net7.0\AppizsoftApp.Persistence.csproj.CopyComplete
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Persistence\bin\Debug\net7.0\AppizsoftApp.Persistence.runtimeconfig.json
+D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Persistence\obj\Debug\net7.0\AppizsoftApp.Persistence.genruntimeconfig.cache

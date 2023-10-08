@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace AppizsoftApp.Application.Middlewares
 {
-    public class AuthorizationMiddleware
+    public class AuthorizationMiddleware: IMiddleware
     {
         private readonly RequestDelegate _next;
 
@@ -18,7 +18,7 @@ namespace AppizsoftApp.Application.Middlewares
         public async Task Invoke(HttpContext context)
         {
          
-            if (!IsUserAuthorized(context.User))
+            if (!IsUserAuthorized(context.User)) 
             {
                 context.Response.StatusCode = 403; 
                 await context.Response.WriteAsync("Erişim Reddedildi. Yetkiniz Yok.");
@@ -27,13 +27,17 @@ namespace AppizsoftApp.Application.Middlewares
             await _next(context);
         }
 
+        public Task InvokeAsync(HttpContext context, RequestDelegate next)
+        {
+            throw new NotImplementedException();
+        }
+
         private bool IsUserAuthorized(ClaimsPrincipal user)
         {
             return true;
            // return user.IsInRole("Admin");
         }
     }
-
 }
 
 

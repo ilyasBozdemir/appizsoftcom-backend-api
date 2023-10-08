@@ -1,7 +1,5 @@
-﻿using AppizsoftApp.Application.Features.AppUser.Commands;
-using AppizsoftApp.Application.Features.AppUser.Queries;
-using AppizsoftApp.Application.Features.AppUser.Results;
-using AppizsoftApp.Application.Features.Users.Queries;
+﻿
+using AppizsoftApp.Application.Features.Commands.LoginUser;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -12,20 +10,16 @@ namespace AppizsoftApp.Application
     {
         public static void AddApplicationRegistration(this IServiceCollection services)
         {
-            var assm = Assembly.GetExecutingAssembly();
-            services.AddAutoMapper(assm);
+
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
+
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             // `AddScoped`, her HTTP isteği için yeni bir hizmet örneği oluşturur ve bu isteğin ömrü boyunca aynı örneği kullanır.
-            //senden IRequestHandler<ExistUserQuery, bool> istersem bana ExistUserQueryHandler ver
-            services.AddScoped<IRequestHandler<ExistUserQuery, ExistUserResult>, ExistUserQueryHandler>();
-            services.AddScoped<IRequestHandler<CreateUserCommand, CreateUserResult>, CreateUserCommandHandler>();
-            services.AddScoped<IRequestHandler<LoginCommand, LoginResult>, LoginCommandHandler>();
-            services.AddScoped<IRequestHandler<CheckSessionQuery, CheckSessionResult>, CheckSessionQueryHandler>();
-            services.AddScoped<IRequestHandler<ForgotPasswordQuery, ForgotPasswordResult>, ForgotPasswordQueryHandler>();
+          
 
-            services.AddScoped<IRequestHandler<ResetPasswordCommand, ResetPasswordResult>, ResetPasswordCommandHandler>();
-
-            
+            services.AddTransient<IRequestHandler<LoginUserCommandRequest, LoginUserCommandResponse>, LoginUserCommandHandler>();
+            services.AddHttpClient();
         }
     }
 }
