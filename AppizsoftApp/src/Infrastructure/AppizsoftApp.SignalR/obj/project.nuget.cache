@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lnzt+Z+7hHX2qPEBAv0Y+LYgw4q2zkPPK0S1FgfgXsCDAQSqghyyts0AbjYQPOWACse8i+jxVXVpW5Gvp2pFgA==",
+  "dgSpecHash": "snrYIfWZ83G9j9hI9J69brrqquuvYjxgWXXWlSPruUnzvN8BeawsjoKE9OOtqqVbAjnfvD0M9hglGw3m3hBGvw==",
   "success": true,
   "projectFilePath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.SignalR\\AppizsoftApp.SignalR.csproj",
   "expectedPackageFiles": [

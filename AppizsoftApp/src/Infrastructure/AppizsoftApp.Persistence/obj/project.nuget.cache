@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3IBdlOAASpDPdV31NIj/sGONcqPFThHqtTHUFdNBWziY3j77qOwzVGKsUXtt5PP2heFZ2lEBEDsvU+8DNQK+8Q==",
+  "dgSpecHash": "7ARn6DOlGf0Y8sOnLTqlTzwUaD8Nuy8VEsFj22XljZ56qKqmoJx8c1YNBAl28rAbqkY5HJQ4n2ONoYPsWBqSRg==",
   "success": true,
   "projectFilePath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Persistence\\AppizsoftApp.Persistence.csproj",
   "expectedPackageFiles": [

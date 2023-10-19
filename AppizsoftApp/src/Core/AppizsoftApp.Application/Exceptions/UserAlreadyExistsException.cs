@@ -9,7 +9,7 @@ namespace AppizsoftApp.Application.Exceptions
     public class UserAlreadyExistsException : Exception
     {
         public UserAlreadyExistsException(string message)
-                  : base($"UserAlreadyExistsException: {message}")
+                  : base($"{message}")
         {
         }
     }

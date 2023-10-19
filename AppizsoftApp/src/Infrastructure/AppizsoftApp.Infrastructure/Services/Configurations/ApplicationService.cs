@@ -6,42 +6,37 @@ using AppizsoftApp.Application.Interfaces.Services.Configurations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
+using Newtonsoft.Json.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace AppizsoftApp.Infrastructure.Services.Configurations
 {
 
     public class ApplicationService : IApplicationService
     {
+        Url _developmentUrl = new Url();
 
 
-        private string GetHttpType(MethodInfo methodInfo)
+        public ApplicationService()
         {
-            var httpAttribute = methodInfo.GetCustomAttributes().FirstOrDefault(attr => attr is HttpMethodAttribute);
-            if (httpAttribute is HttpMethodAttribute httpMethodAttribute)
-            {
-                return httpMethodAttribute.HttpMethods.FirstOrDefault();
-            }
-            return "Unknown";
+            string launchSettingsPath = Path.Combine(Directory.GetCurrentDirectory(), "Properties", "launchSettings.json");
+            string jsonText = File.ReadAllText(launchSettingsPath);
+            JObject launchSettings = JObject.Parse(jsonText);
+            _developmentUrl.HttpUrl  = (string)launchSettings["profiles"]["http"]["applicationUrl"];
+            _developmentUrl.HttpsUrl = (string)launchSettings["profiles"]["https"]["applicationUrl"];
+            string pattern = @"https://(.*?);";
+            Match match = Regex.Match(_developmentUrl.HttpsUrl, pattern);
+            if (match.Success)
+                _developmentUrl.HttpsUrl = "https://" + match.Groups[1].Value;
         }
-
-        private string GetMethodCode(MethodInfo methodInfo)
-        {
-            return "Controller code here";
-        }
-
-
         public ApiConfiguration GetAuthorizeDefinitionEndpoints(Type type)
         {
             ApiConfiguration apiConfiguration = new ApiConfiguration()
             {
                 BaseUrl = new BaseUrl()
                 {
-                    DevelopmentUrl = new Url()
-                    {
-                        HttpsUrl = "https://localhost:7143",
-                        HttpUrl = "http://localhost:5226"
-                    },
+                    DevelopmentUrl = _developmentUrl,
                     ProductionUrl = new Url()
                     {
                         HttpsUrl = "https://api.appizsoft.com/",
@@ -77,10 +72,7 @@ namespace AppizsoftApp.Infrastructure.Services.Configurations
                 var producesAttribute = controller.GetCustomAttributes(typeof(ProducesAttribute), true).FirstOrDefault() as ProducesAttribute;
                 var consumesAttribute = controller.GetCustomAttributes(typeof(ConsumesAttribute), true).FirstOrDefault() as ConsumesAttribute;
 
-
-
                 Application.Dtos.Configuration.Controller _controller = null;
-
                 foreach (var action in actions)
                 {
                     var attributes = action.GetCustomAttributes(true);
@@ -107,8 +99,6 @@ namespace AppizsoftApp.Infrastructure.Services.Configurations
 
                         var authorizeDefinitionAttribute = attributes.FirstOrDefault(a => a.GetType() == typeof(AuthorizeDefinitionAttribute)) as AuthorizeDefinitionAttribute;
 
-
-
                         if (authorizeDefinitionAttribute != null)
                         {
                             if (_controller == null)
@@ -121,7 +111,7 @@ namespace AppizsoftApp.Infrastructure.Services.Configurations
                                 _controller.Name = authorizeDefinitionAttribute.Menu;
                             }
 
-                            AppizsoftApp.Application.Dtos.Configuration.Action _action = new AppizsoftApp.Application.Dtos.Configuration.Action()
+                            Application.Dtos.Configuration.Action _action = new Application.Dtos.Configuration.Action()
                             {
                                 ActionType = Enum.GetName(typeof(ActionType), authorizeDefinitionAttribute.ActionType) + "",
                                 Definition = authorizeDefinitionAttribute.Definition
@@ -162,11 +152,8 @@ namespace AppizsoftApp.Infrastructure.Services.Configurations
                                     {
                                         string propertyName = property.Name;
                                         Type propertyType = property.PropertyType;
-
                                         string className = parameterType.FullName;
                                         _parameter.Type = className;
-
-
                                         if (propertyType.IsGenericType && propertyType.GetGenericTypeDefinition() == typeof(List<>))
                                         {
                                             Type[] typeArguments = propertyType.GetGenericArguments();
@@ -211,7 +198,6 @@ namespace AppizsoftApp.Infrastructure.Services.Configurations
                                         }
                                         else
                                         {
-
                                             if (propertyType.Namespace == "System" && propertyType.FullName == "System.String")
                                             {
                                                
@@ -228,19 +214,14 @@ namespace AppizsoftApp.Infrastructure.Services.Configurations
                                         }
                                     }
                                 }
-                                else if (parameterType.IsValueType)
-                                {
-                                   
-                                }
+                                else if (parameterType.IsValueType) {}
                                 else if (parameterType.IsEnum) { }
-
                                 else
                                 {
                                     _parameter.Name = parameterName;
                                     string className = parameterType.FullName;
                                     _parameter.Type = className;
                                 }
-
                                 _action.Parameters.Add(_parameter);
                             }
                             _controller.Actions.Add(_action);
@@ -248,12 +229,9 @@ namespace AppizsoftApp.Infrastructure.Services.Configurations
                     }
                 }
             }
-
             apiConfiguration.Controllers = _controllers;
             return apiConfiguration;
         }
-
-
         public ApiConfiguration GetAllDefinitionEndpoints(Type type)
         {
             throw new NotImplementedException();

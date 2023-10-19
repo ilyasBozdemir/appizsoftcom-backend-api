@@ -4,107 +4,151 @@ using AppizsoftApp.Application.Interfaces.Services;
 using AppizsoftApp.Domain.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System.Text.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AppizsoftApp.Application.Features.Commands.LoginUser;
+using AppizsoftApp.Application.Helpers;
+using AppizsoftApp.Application.Features.Commands.CreateUser;
+using System.Security.Claims;
+using AppizsoftApp.Application.Interfaces.Services.Authentications;
+using AppizsoftApp.Application.Dtos.User;
 
 namespace AppizsoftApp.Persistence.Services
 {
-    public class AuthService: IAuthService
+    /*
+    _signInManager.CheckPasswordSignInAsync yöntemi, sadece kullanıcının kimliğini doğrular ve oturum açma işlemi gerçekleştirmez. Dolayısıyla, kullanıcı kimlik doğrulama başarılı olsa bile oturum açılmaz.
+    Eğer oturum açmayı gerçekleştirmek istiyorsanız,
+    _signInManager.PasswordSignInAsync yöntemini kullanmalısınız.
+    Bu yöntem, kullanıcının kimliğini doğruladığı gibi oturum açmayı da sağlar.
+    Önceki açıklamalara göre, _signInManager.PasswordSignInAsync yöntemi ile kullanıcı kimliği doğrulama ve oturum açma işlemini gerçekleştirebilirsiniz.
+     */
+
+    public class AuthService : IAuthService
     {
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
         private readonly ITokenHandler _tokenHandler;
         private readonly IUserService _userService;
         private readonly IMailService _mailService;
+
+
         private readonly UserManager<Domain.Entities.Identity.AppUser> _userManager;
-        private  readonly SignInManager<Domain.Entities.Identity.AppUser> _signInManager;
+        private readonly SignInManager<Domain.Entities.Identity.AppUser> _signInManager;
 
-
-        public AuthService(IHttpClientFactory httpClientFactory, IConfiguration configuration, UserManager<Domain.Entities.Identity.AppUser> userManager,
-            ITokenHandler tokenHandler,
-            SignInManager<AppUser> signInManager, IMailService mailService)
+        public AuthService(HttpClient httpClient = null, IConfiguration configuration = null, ITokenHandler tokenHandler = null, IUserService userService = null, IMailService mailService = null, UserManager<AppUser> userManager = null, SignInManager<AppUser> signInManager = null)
         {
-            _httpClient = httpClientFactory.CreateClient();
+            _httpClient = httpClient;
             _configuration = configuration;
             _tokenHandler = tokenHandler;
-            _signInManager = signInManager;
+            _userService = userService;
             _mailService = mailService;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
-        async Task<Token> CreateUserExternalAsync(AppUser user, string email, string name, UserLoginInfo info, int accessTokenLifeTime)
+        public async Task<Token> HandleExternalLoginAsync(ExternalLoginInfo info, int accessTokenLifeTime = 900)
         {
-            bool result = user != null;
-            if (user == null)
+            if (info == null)
             {
-                user = await _userManager.FindByEmailAsync(email);
+                throw new Exception("External login info is missing.");
+            }
+
+            var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
+
+            switch (result)
+            {
+                case { Succeeded: true }:
+                    var user = await _userManager.FindByLoginAsync(info.LoginProvider, info.ProviderKey);
+                    var token = _tokenHandler.GenerateToken(user);
+                    return token;
+
+                case { IsLockedOut: true }:
+                    throw new Exception("User account is locked.");
+
+                case { IsNotAllowed: true }:
+                    throw new Exception("User is not allowed to sign in.");
+
+                default:
+                    throw new Exception("Unhandled result case.");
+            }
+
+            var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+            var newUser = new AppUser
+            {
+                UserName = email,
+                Email = email,
+
+            };
+            var identityResult = await _userManager.CreateAsync(newUser);
+
+            if (identityResult.Succeeded)
+            {
+                await _userManager.AddLoginAsync(newUser, info);
+                var token = _tokenHandler.GenerateToken(newUser);
+                return token;
+            }
+            else
+                throw new Exception("User registration failed.");
+
+        }
+
+
+        private async Task<IdentityResult> CreateUserAsync(AppUser user, CreateUserCommandRequest registerUser, UserLoginInfo info = null, int accessTokenLifeTime = 900)
+        {
+            bool isExternalRegistration = user != null;
+
+            if (!isExternalRegistration)
+            {
+                user = await _userManager.FindByEmailAsync(registerUser.Email);
                 if (user == null)
                 {
-                    user = new()
+                    user = new AppUser
                     {
                         Id = Guid.NewGuid(),
-                        Email = email,
-                        UserName = email,
-                        NameSurname = name
+                        Email = registerUser.Email,
+                        UserName = registerUser.UserName,
+                        Name = registerUser.Name,
+                        Surname = registerUser.Surname,
+                        CreatedAt = DateTime.UtcNow
                     };
                     var identityResult = await _userManager.CreateAsync(user);
-                    result = identityResult.Succeeded;
+
+                    isExternalRegistration = identityResult.Succeeded;
                 }
             }
 
-            if (result)
+            if (isExternalRegistration)
             {
-                await _userManager.AddLoginAsync(user, info); //AspNetUserLogins
+                await _userManager.AddLoginAsync(user, info);
 
                 Token token = _tokenHandler.GenerateToken(user);
                 await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.Expiration, 15);
-                return token;
+                return IdentityResult.Success;
             }
-            throw new Exception("Invalid external authentication.");
+            throw new Exception("Invalid registration.");
         }
 
 
 
-        public async Task<Token> FacebookLoginAsync(string authToken, int accessTokenLifeTime)
-        {
-            string accessTokenResponse = await _httpClient.GetStringAsync($"https://graph.facebook.com/oauth/access_token?client_id={_configuration["ExternalLoginSettings:Facebook:Client_ID"]}&client_secret={_configuration["ExternalLoginSettings:Facebook:Client_Secret"]}&grant_type=client_credentials");
 
-            FacebookAccessTokenResponse? facebookAccessTokenResponse = JsonSerializer.Deserialize<FacebookAccessTokenResponse>(accessTokenResponse);
-
-            string userAccessTokenValidation = await _httpClient.GetStringAsync($"https://graph.facebook.com/debug_token?input_token={authToken}&access_token={facebookAccessTokenResponse?.AccessToken}");
-
-            FacebookUserAccessTokenValidation? validation = JsonSerializer.Deserialize<FacebookUserAccessTokenValidation>(userAccessTokenValidation);
-
-            if (validation?.Data.IsValid != null)
-            {
-                string userInfoResponse = await _httpClient.GetStringAsync($"https://graph.facebook.com/me?fields=email,name&access_token={authToken}");
-
-                FacebookUserInfoResponse? userInfo = JsonSerializer.Deserialize<FacebookUserInfoResponse>(userInfoResponse);
-
-                var info = new UserLoginInfo("FACEBOOK", validation.Data.UserId, "FACEBOOK");
-                Domain.Entities.Identity.AppUser user = await _userManager.FindByLoginAsync(info.LoginProvider, info.ProviderKey);
-
-                return await CreateUserExternalAsync(user, userInfo.Email, userInfo.Name, info, accessTokenLifeTime);
-            }
-            throw new Exception("Invalid external authentication.");
-        }
-
-        public async Task<Token> GoogleLoginAsync(string idToken, int accessTokenLifeTime)
+        public Task<Token> FacebookLoginAsync(string authToken, int accessTokenLifeTime)
         {
             throw new NotImplementedException();
         }
 
-        public Task<LoginUserCommandResponse> LoginAsync(string usernameOrEmail, string password, int accessTokenLifeTime)
+        public Task ForgotPasswordAsync(string usernameOrEmail)
         {
             throw new NotImplementedException();
         }
 
-        public Task PasswordResetAsnyc(string email)
+        public Task<Token> GoogleLoginAsync(string idToken, int accessTokenLifeTime)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<CreateUserResponse> LoginAsync(string usernameOrEmail, string password, int accessTokenLifeTime)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task PasswordResetAsnyc(string usernameOrEmail)
         {
             throw new NotImplementedException();
         }
@@ -114,9 +158,43 @@ namespace AppizsoftApp.Persistence.Services
             throw new NotImplementedException();
         }
 
+        public async Task<CreateUserResponse> CreateUserAsync(CreateUser createUser)
+        {
+            var commandResponse = new CreateUserResponse();
+            return commandResponse;
+        }
+
+        public Task ResetPasswordAsync(string usernameOrEmail, string resetToken, string newPassword)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<SignInResult> SignInAsync(string username, string password, bool isPersistent, bool lockoutOnFailure)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task SignOutAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<bool> VerifyResetTokenAsync(string resetToken, string userId)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<bool> CheckUserExistence(string userName, string email)
+        {
+            
+            var userByName = await _userManager.FindByNameAsync(userName);
+
+            var userByEmail = await _userManager.FindByEmailAsync(email);
+
+            if (userByName != null || userByEmail != null)
+                return true;
+
+            return false;
         }
     }
 }

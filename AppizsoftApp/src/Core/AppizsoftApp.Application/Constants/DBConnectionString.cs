@@ -32,7 +32,7 @@
                 Connections.Add(new DatabaseConnection
                 {
                     DbType = DBType.SQLServer,
-                    ConnectionString = "Server=DESKTOP-R4UP5K6\\SQLEXPRESS;Database=AppizsoftAppDB;Integrated Security=True;"
+                    ConnectionString = "Server=DESKTOP-R4UP5K6\\SQLEXPRESS;Database=AppizsoftAppDB;Integrated Security=True;TrustServerCertificate=True;"
                 });
             }
             else if (DeveloperName == DeveloperName.Murat)

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7OwIYdkTXrU7ZcIsRTMaLG8QElAxZReYgqyM0RM3QZ6BATmLH8tHv3n/wkhqoyrdoQL4z+glVPxgfnBgiMKJJA==",
+  "dgSpecHash": "2SY0E5IGQB8Kye5qa/LpBesNMLufpULGIf+xvIxV5FUp94aMfHpv3X+9A4q7/qP8Xmb49OQXtqgoYbrA3yA2rw==",
   "success": true,
   "projectFilePath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.LoggingAndMonitoring\\AppizsoftApp.LoggingAndMonitoring.csproj",
   "expectedPackageFiles": [

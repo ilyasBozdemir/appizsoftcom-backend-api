@@ -26,7 +26,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         Title = "AppizsoftApp.WebApi V1",
         Version = "v1",
-        Description = "Appizsoft Yazýlým v1 Backend Web API arayüzüdür.",
+        Description = "Appizsoft Yazýlým v1 Backend Web API arayüzüdür.Bu API, uygulamamýzýn çeþitli özelliklerine eriþim saðlar.",
         Contact = new OpenApiContact()
         {
             Name = "Appizsoft Yazýlým",
@@ -101,6 +101,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 #endregion
+
 
 #region Cors servise eklenmesi
 
@@ -209,7 +210,9 @@ app.UseRateLimiter();
 
 app.UseHttpsRedirection();
 
-app.UseMiddleware<AuthorizationMiddleware>();
+//app.UseMiddleware<ErrorHandlingMiddleware>();
+
+//app.UseMiddleware<AuthorizationMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();

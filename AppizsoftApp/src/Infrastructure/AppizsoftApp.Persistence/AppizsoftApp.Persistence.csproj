@@ -32,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Configurations\" />
     <Folder Include="Repositories\Dapper\" />
     <Folder Include="Repositories\Entity Framework\" />
   </ItemGroup>

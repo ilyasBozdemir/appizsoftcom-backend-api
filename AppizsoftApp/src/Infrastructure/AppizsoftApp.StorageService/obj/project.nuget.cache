@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PL/bR9WiXOFX/FS56yyFFbZEXYthLLmW3xcqGfakBps0cd3tFSBMwqj63HfKAkO8K5kC8Yy7WaVMV88GOSieVQ==",
+  "dgSpecHash": "s6iW+5uU6bebYPXm+oFtlKvTuppfAY1KhknJ7QSTLFJzB7CaJIZCAT3flTfXIDWHzM9ZUw0zkYuebpTAi2NJ1A==",
   "success": true,
   "projectFilePath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.StorageService\\AppizsoftApp.StorageService.csproj",
   "expectedPackageFiles": [

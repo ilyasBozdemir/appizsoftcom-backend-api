@@ -2,7 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using AppizsoftApp.Domain.Entities.Identity;
-using System.Configuration;
 using AppizsoftApp.Application.Constants;
 using Microsoft.AspNetCore.Identity;
 using AppizsoftApp.Application.Interfaces.Services;
@@ -16,6 +15,8 @@ namespace AppizsoftApp.Persistence
         {
             services.AddDbContext<AppizsoftAppDBContext>(options => options
             .UseSqlServer(DBConnectionString.GetConnectionString(DeveloperName.Ilyas, DBType.SQLServer)));
+
+
             services.AddIdentity<AppUser, AppRole>(options =>
             {
                 options.Password.RequiredLength = 3;
@@ -23,15 +24,18 @@ namespace AppizsoftApp.Persistence
                 options.Password.RequireDigit = false;
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
-            }).AddEntityFrameworkStores<AppizsoftAppDBContext>()
-            .AddDefaultTokenProviders();
+                options.SignIn.RequireConfirmedEmail = false;
+            })
+                .AddSignInManager<SignInManager<AppUser>>()
+                .AddEntityFrameworkStores<AppizsoftAppDBContext>()
+                .AddDefaultTokenProviders()
+                ;
+           
 
             // services.AddScoped<IAuthRepository, EfAuthRepository>();//EF Core kullanıyoruz.
 
-
-
-
-            services.AddScoped<IAuthService, AuthService>(); // Örnek bir kayıt
+            services.AddScoped<IAuthService, AuthService>(); // 
+            services.AddScoped<IUserService, UserService>(); // 
 
         }
     }
