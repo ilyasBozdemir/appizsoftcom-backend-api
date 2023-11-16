@@ -55,8 +55,8 @@ namespace AppizsoftApp.Security.Services
 
             return new()
             {
-                AccessToken= tokenHandler.WriteToken(token),
-                Expiration= expiry,
+                AccessToken = tokenHandler.WriteToken(token),
+                Expiration = expiry,
             };
         }
 

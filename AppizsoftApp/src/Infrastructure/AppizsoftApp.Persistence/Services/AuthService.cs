@@ -1,14 +1,14 @@
 ﻿using AppizsoftApp.Application.Dtos;
-using AppizsoftApp.Application.Dtos.Facebook;
 using AppizsoftApp.Application.Interfaces.Services;
 using AppizsoftApp.Domain.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
-using AppizsoftApp.Application.Helpers;
-using AppizsoftApp.Application.Features.Commands.CreateUser;
 using System.Security.Claims;
-using AppizsoftApp.Application.Interfaces.Services.Authentications;
 using AppizsoftApp.Application.Dtos.User;
+using AppizsoftApp.Application.Features.Commands.AppUser.CreateUser;
+using AppizsoftApp.Application.Exceptions;
+using Microsoft.EntityFrameworkCore;
+using Google.Apis.Auth;
 
 namespace AppizsoftApp.Persistence.Services
 {
@@ -90,22 +90,22 @@ namespace AppizsoftApp.Persistence.Services
         }
 
 
-        private async Task<IdentityResult> CreateUserAsync(AppUser user, CreateUserCommandRequest registerUser, UserLoginInfo info = null, int accessTokenLifeTime = 900)
+        private async Task<Token> CreateUserExternalAsync(AppUser? user, string email, string name, UserLoginInfo info, int accessTokenLifeTime)
         {
             bool isExternalRegistration = user != null;
 
             if (!isExternalRegistration)
             {
-                user = await _userManager.FindByEmailAsync(registerUser.Email);
+                user = await _userManager.FindByEmailAsync(user.Email);
                 if (user == null)
                 {
                     user = new AppUser
                     {
                         Id = Guid.NewGuid(),
-                        Email = registerUser.Email,
-                        UserName = registerUser.UserName,
-                        Name = registerUser.Name,
-                        Surname = registerUser.Surname,
+                        Email = user.Email,
+                        UserName = user.UserName,
+                        Name = user.Name,
+                        Surname = user.Surname,
                         CreatedAt = DateTime.UtcNow
                     };
                     var identityResult = await _userManager.CreateAsync(user);
@@ -120,7 +120,7 @@ namespace AppizsoftApp.Persistence.Services
 
                 Token token = _tokenHandler.GenerateToken(user);
                 await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.Expiration, 15);
-                return IdentityResult.Success;
+                return token;
             }
             throw new Exception("Invalid registration.");
         }
@@ -138,14 +138,37 @@ namespace AppizsoftApp.Persistence.Services
             throw new NotImplementedException();
         }
 
-        public Task<Token> GoogleLoginAsync(string idToken, int accessTokenLifeTime)
+        public async Task<Token> GoogleLoginAsync(string idToken, int accessTokenLifeTime)
         {
-            throw new NotImplementedException();
-        }
 
-        public Task<CreateUserResponse> LoginAsync(string usernameOrEmail, string password, int accessTokenLifeTime)
+            var settings = new GoogleJsonWebSignature.ValidationSettings()
+            {
+                Audience = new List<string> { _configuration["ExternalLoginSettings:Google:Client_ID"] }
+            };
+
+            var payload = await GoogleJsonWebSignature.ValidateAsync(idToken, settings);
+            var info = new UserLoginInfo("GOOGLE", payload.Subject, "GOOGLE");
+            Domain.Entities.Identity.AppUser user = await _userManager.FindByLoginAsync(info.LoginProvider, info.ProviderKey);
+
+            return await CreateUserExternalAsync(user, payload.Email, payload.Name, info, accessTokenLifeTime);
+        }
+        public async Task<Token> LoginAsync(string usernameOrEmail, string password, int accessTokenLifeTime)
         {
-            throw new NotImplementedException();
+            Domain.Entities.Identity.AppUser user = await _userManager.FindByNameAsync(usernameOrEmail);
+
+            if (user == null)
+                user = await _userManager.FindByEmailAsync(usernameOrEmail);
+            if (user == null)
+                throw new UserNotFoundException();
+
+            SignInResult result = await _signInManager.CheckPasswordSignInAsync(user, password, false);
+            if (result.Succeeded) //Authentication başarılı!
+            {
+                Token token = _tokenHandler.GenerateToken( user);
+                await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.Expiration, 15);
+                return token;
+            }
+            throw new AuthenticationErrorException("kimlik doğrulanamadı!");
         }
 
         public Task PasswordResetAsnyc(string usernameOrEmail)
@@ -153,9 +176,17 @@ namespace AppizsoftApp.Persistence.Services
             throw new NotImplementedException();
         }
 
-        public Task<Token> RefreshTokenLoginAsync(string refreshToken)
+        public async Task<Token> RefreshTokenLoginAsync(string refreshToken)
         {
-            throw new NotImplementedException();
+            AppUser? user = await _userManager.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
+            if (user != null && user?.RefreshTokenEndDate > DateTime.UtcNow)
+            {
+                Token token = _tokenHandler.GenerateToken(user);
+                await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.Expiration, 300);
+                return token;
+            }
+            else
+                throw new UserNotFoundException();
         }
 
         public async Task<CreateUserResponse> CreateUserAsync(CreateUser createUser)

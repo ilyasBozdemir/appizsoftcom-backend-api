@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JPmtk9w9UJ4pOvgLT9sni4EZZT0sMbxtxB9c2f8QF72JM/WOBLyitsowzIh+QQi5Sc4DRIWdGp0X6QyPesctuw==",
+  "dgSpecHash": "9PZIGjP5d0V4Nt5WoGxZQdn+GDDnK3Mz4RDEIZKrmwn/sAyjmEzIb10J8iLOfUtkNKY2O24A/mg/lR9tdVtPuQ==",
   "success": true,
-  "projectFilePath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Presentation\\AppizsoftApp.WebApi\\AppizsoftApp.WebApi.csproj",
+  "projectFilePath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Presentation\\AppizsoftApp.WebApi\\AppizsoftApp.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -11,6 +11,9 @@
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.7.1\\fluentvalidation.dependencyinjectionextensions.11.7.1.nupkg.sha512",
+    "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\google.apis\\1.62.1\\google.apis.1.62.1.nupkg.sha512",
+    "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\google.apis.auth\\1.62.1\\google.apis.auth.1.62.1.nupkg.sha512",
+    "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\google.apis.core\\1.62.1\\google.apis.core.1.62.1.nupkg.sha512",
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",

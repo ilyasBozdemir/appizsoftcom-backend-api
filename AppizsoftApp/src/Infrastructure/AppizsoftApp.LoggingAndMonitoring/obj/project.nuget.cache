@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2SY0E5IGQB8Kye5qa/LpBesNMLufpULGIf+xvIxV5FUp94aMfHpv3X+9A4q7/qP8Xmb49OQXtqgoYbrA3yA2rw==",
+  "dgSpecHash": "AVRJjzABcE0Xq9466Pyr5Zcnh3yxj3goIYnBBlRc8uXzB2oWn4RxDXI38tKLYlGZC0lqhgH8kaJiUoujIMijLg==",
   "success": true,
-  "projectFilePath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.LoggingAndMonitoring\\AppizsoftApp.LoggingAndMonitoring.csproj",
+  "projectFilePath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.LoggingAndMonitoring\\AppizsoftApp.LoggingAndMonitoring.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

@@ -1784,11 +1784,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.LoggingAndMonitoring\\AppizsoftApp.LoggingAndMonitoring.csproj",
+      "projectUniqueName": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.LoggingAndMonitoring\\AppizsoftApp.LoggingAndMonitoring.csproj",
       "projectName": "AppizsoftApp.LoggingAndMonitoring",
-      "projectPath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.LoggingAndMonitoring\\AppizsoftApp.LoggingAndMonitoring.csproj",
+      "projectPath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.LoggingAndMonitoring\\AppizsoftApp.LoggingAndMonitoring.csproj",
       "packagesPath": "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\",
-      "outputPath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.LoggingAndMonitoring\\obj\\",
+      "outputPath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.LoggingAndMonitoring\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1810,11 +1810,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.EmailService\\AppizsoftApp.EmailService.csproj": {
-              "projectPath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.EmailService\\AppizsoftApp.EmailService.csproj"
+            "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.EmailService\\AppizsoftApp.EmailService.csproj": {
+              "projectPath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.EmailService\\AppizsoftApp.EmailService.csproj"
             },
-            "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Security\\AppizsoftApp.Security.csproj": {
-              "projectPath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Security\\AppizsoftApp.Security.csproj"
+            "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Security\\AppizsoftApp.Security.csproj": {
+              "projectPath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Security\\AppizsoftApp.Security.csproj"
             }
           }
         }
@@ -1850,7 +1850,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   },

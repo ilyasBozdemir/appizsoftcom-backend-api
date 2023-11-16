@@ -1,6 +1,6 @@
 ﻿using AppizsoftApp.Application.Helpers;
 
-namespace AppizsoftApp.Application.Features.Commands.CreateUser
+namespace AppizsoftApp.Application.Features.Commands.AppUser.CreateUser
 {
     public class CreateUserCommandResponse : ActionResult
     {

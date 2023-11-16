@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yhOtLi40SynPUZl7TzLax7b1Khud82O7DDw0bpqE5Jqg7/iGSsVVb1yAgVcvMyUO+7vvjNoQ8y8QrvbqjJLHCQ==",
+  "dgSpecHash": "CGyRQZc2z/zTrA/30yHfe8cqIU/cpedF/nrhBYDTRX3u2Hr301yusnoLjJ+LfsCg7Ksb+ETEpuAZx+ogBxNuew==",
   "success": true,
-  "projectFilePath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.RabbitMQ\\AppizsoftApp.RabbitMQ.csproj",
+  "projectFilePath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.RabbitMQ\\AppizsoftApp.RabbitMQ.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.0.1\\microsoft.identitymodel.abstractions.7.0.1.nupkg.sha512",

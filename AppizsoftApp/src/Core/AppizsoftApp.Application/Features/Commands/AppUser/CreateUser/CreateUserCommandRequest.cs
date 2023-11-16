@@ -3,7 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Xml.Linq;
 
-namespace AppizsoftApp.Application.Features.Commands.CreateUser
+namespace AppizsoftApp.Application.Features.Commands.AppUser.CreateUser
 {
     /// <summary>
     /// Kullanıcı kaydı komutu için istek nesnesini temsil eden sınıf.

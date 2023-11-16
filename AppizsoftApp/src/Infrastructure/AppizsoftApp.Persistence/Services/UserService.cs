@@ -1,4 +1,5 @@
 ﻿using AppizsoftApp.Application.Dtos.User;
+using AppizsoftApp.Application.Exceptions;
 using AppizsoftApp.Application.Interfaces.Services;
 using AppizsoftApp.Domain.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
@@ -70,9 +71,16 @@ namespace AppizsoftApp.Persistence.Services
             throw new NotImplementedException();
         }
 
-        public Task UpdateRefreshTokenAsync(string refreshToken, AppUser user, DateTime accessTokenDate, int addOnAccessTokenDate)
+        public async Task UpdateRefreshTokenAsync(string refreshToken, AppUser user, DateTime accessTokenDate, int addOnAccessTokenDate)
         {
-            throw new NotImplementedException();
+            if (user != null)
+            {
+                user.RefreshToken = refreshToken;
+                user.RefreshTokenEndDate = accessTokenDate.AddSeconds(addOnAccessTokenDate);
+                await _userManager.UpdateAsync(user);
+            }
+            else
+                throw new UserNotFoundException();
         }
     }
 }

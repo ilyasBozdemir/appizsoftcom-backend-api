@@ -1,7 +1,7 @@
 ﻿using AppizsoftApp.Application.Exceptions;
 using AppizsoftApp.Application.Interfaces.Services;
 using MediatR;
-namespace AppizsoftApp.Application.Features.Commands.CreateUser
+namespace AppizsoftApp.Application.Features.Commands.AppUser.CreateUser
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommandRequest, CreateUserCommandResponse>
     {
@@ -49,7 +49,7 @@ namespace AppizsoftApp.Application.Features.Commands.CreateUser
             {
                 var errors = new string[] { ex.Message };
 
-                return new CreateUserCommandResponse(false, 400, errors);
+                return new CreateUserCommandResponse(false, 500, errors);
             }
         }
     }

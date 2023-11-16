@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Queries\" />
+    <Folder Include="Features\Commands\AppUser\FacebookLogin\" />
+    <Folder Include="Features\Queries\AppUser\" />
     <Folder Include="Filters\" />
     <Folder Include="Interfaces\Hubs\" />
     <Folder Include="Interfaces\Storage\" />

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Persistence\\AppizsoftApp.Persistence.csproj": {}
+    "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Persistence\\AppizsoftApp.Persistence.csproj": {}
   },
   "projects": {
-    "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Application\\AppizsoftApp.Application.csproj": {
+    "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Application\\AppizsoftApp.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Application\\AppizsoftApp.Application.csproj",
+        "projectUniqueName": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Application\\AppizsoftApp.Application.csproj",
         "projectName": "AppizsoftApp.Application",
-        "projectPath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Application\\AppizsoftApp.Application.csproj",
+        "projectPath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Application\\AppizsoftApp.Application.csproj",
         "packagesPath": "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\",
-        "outputPath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Application\\obj\\",
+        "outputPath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\AppizsoftApp.Domain.csproj": {
-                "projectPath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\AppizsoftApp.Domain.csproj"
+              "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\AppizsoftApp.Domain.csproj": {
+                "projectPath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\AppizsoftApp.Domain.csproj"
               }
             }
           }
@@ -126,18 +126,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\AppizsoftApp.Domain.csproj": {
+    "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\AppizsoftApp.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\AppizsoftApp.Domain.csproj",
+        "projectUniqueName": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\AppizsoftApp.Domain.csproj",
         "projectName": "AppizsoftApp.Domain",
-        "projectPath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\AppizsoftApp.Domain.csproj",
+        "projectPath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\AppizsoftApp.Domain.csproj",
         "packagesPath": "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\",
-        "outputPath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\obj\\",
+        "outputPath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -212,18 +212,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Persistence\\AppizsoftApp.Persistence.csproj": {
+    "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Persistence\\AppizsoftApp.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Persistence\\AppizsoftApp.Persistence.csproj",
+        "projectUniqueName": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Persistence\\AppizsoftApp.Persistence.csproj",
         "projectName": "AppizsoftApp.Persistence",
-        "projectPath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Persistence\\AppizsoftApp.Persistence.csproj",
+        "projectPath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Persistence\\AppizsoftApp.Persistence.csproj",
         "packagesPath": "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\",
-        "outputPath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Persistence\\obj\\",
+        "outputPath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -245,11 +245,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Application\\AppizsoftApp.Application.csproj": {
-                "projectPath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Application\\AppizsoftApp.Application.csproj"
+              "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Application\\AppizsoftApp.Application.csproj": {
+                "projectPath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Application\\AppizsoftApp.Application.csproj"
               },
-              "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\AppizsoftApp.Domain.csproj": {
-                "projectPath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\AppizsoftApp.Domain.csproj"
+              "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\AppizsoftApp.Domain.csproj": {
+                "projectPath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Core\\AppizsoftApp.Domain\\AppizsoftApp.Domain.csproj"
               }
             }
           }
@@ -271,6 +271,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.62.1, )"
             },
             "MediatR": {
               "target": "Package",
@@ -329,7 +333,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

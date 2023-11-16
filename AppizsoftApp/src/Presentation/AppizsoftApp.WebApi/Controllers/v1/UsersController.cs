@@ -1,8 +1,7 @@
 ﻿using AppizsoftApp.Application.Constants;
 using AppizsoftApp.Application.CustomAttributes;
 using AppizsoftApp.Application.Enums;
-using AppizsoftApp.Application.Features.Commands.CreateUser;
-using AppizsoftApp.Domain.Entities;
+using AppizsoftApp.Application.Features.Commands.AppUser.CreateUser;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;

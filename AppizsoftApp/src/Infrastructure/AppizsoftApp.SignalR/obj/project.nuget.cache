@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "snrYIfWZ83G9j9hI9J69brrqquuvYjxgWXXWlSPruUnzvN8BeawsjoKE9OOtqqVbAjnfvD0M9hglGw3m3hBGvw==",
+  "dgSpecHash": "2QKHHYn1Mksfa1hGZD08ybcuTTpjvcnEEFZWoIxHoZPLdFsP+285AB3LJg82oo7az+sgQVrGmeGQ9KDoDnB1/Q==",
   "success": true,
-  "projectFilePath": "D:\\Github\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.SignalR\\AppizsoftApp.SignalR.csproj",
+  "projectFilePath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.SignalR\\AppizsoftApp.SignalR.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.0.1\\microsoft.identitymodel.abstractions.7.0.1.nupkg.sha512",
