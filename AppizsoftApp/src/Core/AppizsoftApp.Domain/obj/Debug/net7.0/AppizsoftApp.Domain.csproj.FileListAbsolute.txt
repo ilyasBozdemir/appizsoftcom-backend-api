@@ -10,3 +10,15 @@ D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\obj
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\obj\Debug\net7.0\refint\AppizsoftApp.Domain.dll
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\obj\Debug\net7.0\AppizsoftApp.Domain.pdb
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\obj\Debug\net7.0\ref\AppizsoftApp.Domain.dll
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\bin\Debug\net7.0\AppizsoftApp.Domain.deps.json
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\bin\Debug\net7.0\AppizsoftApp.Domain.dll
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\bin\Debug\net7.0\AppizsoftApp.Domain.pdb
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\obj\Debug\net7.0\AppizsoftApp.Domain.csproj.AssemblyReference.cache
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\obj\Debug\net7.0\AppizsoftApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\obj\Debug\net7.0\AppizsoftApp.Domain.AssemblyInfoInputs.cache
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\obj\Debug\net7.0\AppizsoftApp.Domain.AssemblyInfo.cs
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\obj\Debug\net7.0\AppizsoftApp.Domain.csproj.CoreCompileInputs.cache
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\obj\Debug\net7.0\AppizsoftApp.Domain.dll
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\obj\Debug\net7.0\refint\AppizsoftApp.Domain.dll
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\obj\Debug\net7.0\AppizsoftApp.Domain.pdb
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Core\AppizsoftApp.Domain\obj\Debug\net7.0\ref\AppizsoftApp.Domain.dll

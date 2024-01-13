@@ -10,3 +10,15 @@ D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.StorageService\obj\Debug\net7.0\refint\AppizsoftApp.StorageService.dll
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.StorageService\obj\Debug\net7.0\AppizsoftApp.StorageService.pdb
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.StorageService\obj\Debug\net7.0\ref\AppizsoftApp.StorageService.dll
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.StorageService\bin\Debug\net7.0\AppizsoftApp.StorageService.deps.json
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.StorageService\bin\Debug\net7.0\AppizsoftApp.StorageService.dll
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.StorageService\bin\Debug\net7.0\AppizsoftApp.StorageService.pdb
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.StorageService\obj\Debug\net7.0\AppizsoftApp.StorageService.csproj.AssemblyReference.cache
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.StorageService\obj\Debug\net7.0\AppizsoftApp.StorageService.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.StorageService\obj\Debug\net7.0\AppizsoftApp.StorageService.AssemblyInfoInputs.cache
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.StorageService\obj\Debug\net7.0\AppizsoftApp.StorageService.AssemblyInfo.cs
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.StorageService\obj\Debug\net7.0\AppizsoftApp.StorageService.csproj.CoreCompileInputs.cache
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.StorageService\obj\Debug\net7.0\AppizsoftApp.StorageService.dll
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.StorageService\obj\Debug\net7.0\refint\AppizsoftApp.StorageService.dll
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.StorageService\obj\Debug\net7.0\AppizsoftApp.StorageService.pdb
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.StorageService\obj\Debug\net7.0\ref\AppizsoftApp.StorageService.dll

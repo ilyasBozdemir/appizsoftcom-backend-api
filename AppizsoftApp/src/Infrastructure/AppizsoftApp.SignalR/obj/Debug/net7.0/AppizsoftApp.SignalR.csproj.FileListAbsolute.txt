@@ -10,3 +10,15 @@ D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.SignalR\obj\Debug\net7.0\refint\AppizsoftApp.SignalR.dll
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.SignalR\obj\Debug\net7.0\AppizsoftApp.SignalR.pdb
 D:\Github\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.SignalR\obj\Debug\net7.0\ref\AppizsoftApp.SignalR.dll
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.SignalR\bin\Debug\net7.0\AppizsoftApp.SignalR.deps.json
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.SignalR\bin\Debug\net7.0\AppizsoftApp.SignalR.dll
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.SignalR\bin\Debug\net7.0\AppizsoftApp.SignalR.pdb
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.SignalR\obj\Debug\net7.0\AppizsoftApp.SignalR.csproj.AssemblyReference.cache
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.SignalR\obj\Debug\net7.0\AppizsoftApp.SignalR.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.SignalR\obj\Debug\net7.0\AppizsoftApp.SignalR.AssemblyInfoInputs.cache
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.SignalR\obj\Debug\net7.0\AppizsoftApp.SignalR.AssemblyInfo.cs
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.SignalR\obj\Debug\net7.0\AppizsoftApp.SignalR.csproj.CoreCompileInputs.cache
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.SignalR\obj\Debug\net7.0\AppizsoftApp.SignalR.dll
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.SignalR\obj\Debug\net7.0\refint\AppizsoftApp.SignalR.dll
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.SignalR\obj\Debug\net7.0\AppizsoftApp.SignalR.pdb
+D:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.SignalR\obj\Debug\net7.0\ref\AppizsoftApp.SignalR.dll

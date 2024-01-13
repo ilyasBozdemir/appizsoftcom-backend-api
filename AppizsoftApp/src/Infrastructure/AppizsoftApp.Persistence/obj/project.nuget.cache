@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8mJa28YC0HxK7KhPiNvXnOcCqn7+ISvCgw6YXNRID2Jj+yuEBkhiCwc4qsRUiX/sd1gy100np/EA7t7PL8idRQ==",
+  "dgSpecHash": "upH9aPOyhDykJezCNO9M5ph8B0WdguuZw6D40uqAh+VA+uOt0NS99yEefuNgpYucMYLMDdUGoXTB0Epw65BSVw==",
   "success": true,
-  "projectFilePath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Persistence\\AppizsoftApp.Persistence.csproj",
+  "projectFilePath": "D:\\Github\\Appizsoft\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.Persistence\\AppizsoftApp.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

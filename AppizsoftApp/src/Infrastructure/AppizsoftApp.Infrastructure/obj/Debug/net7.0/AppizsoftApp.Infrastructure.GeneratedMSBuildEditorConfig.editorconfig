@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AppizsoftApp.Infrastructure
-build_property.ProjectDir = d:\Github\Appizsoft\Customer Works\Repos\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\
+build_property.ProjectDir = d:\Github\Appizsoft\appizsoftcom-backend-api\AppizsoftApp\src\Infrastructure\AppizsoftApp.Infrastructure\

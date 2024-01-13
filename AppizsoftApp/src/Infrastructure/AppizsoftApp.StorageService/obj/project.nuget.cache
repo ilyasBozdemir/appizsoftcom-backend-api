@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ulIhWaor0bUBmhP/8ldh1pF5AwMfb+ZDZG3pFC7o6GqI2W/rGx7dG/zc/+86mRbTo/2sWhS1mEy9GpP3x9dfew==",
+  "dgSpecHash": "qCCAO7glzAFlYr4FjS90v7IGFtFHMfuDg/F5DkM743jnyM+bXGh/g1Oi9daSvGY2Oi7Jd3Xymnef3z5073S1cQ==",
   "success": true,
-  "projectFilePath": "D:\\Github\\Appizsoft\\Customer Works\\Repos\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.StorageService\\AppizsoftApp.StorageService.csproj",
+  "projectFilePath": "D:\\Github\\Appizsoft\\appizsoftcom-backend-api\\AppizsoftApp\\src\\Infrastructure\\AppizsoftApp.StorageService\\AppizsoftApp.StorageService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\ilyas bozdemir\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.0.1\\microsoft.identitymodel.abstractions.7.0.1.nupkg.sha512",
